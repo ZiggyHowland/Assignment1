@@ -4,18 +4,22 @@ import java.io.BufferedReader;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
+import SalgsRapportering.SalgsRapportering;
 import fileConnection.fileConnection;
 
 public class ReadClass {
     ArrayList<Object> objects = new ArrayList<>();
-    private String filnavn;
+    //TODO
 
+    private String filnavn;
     public void setFilnavn(String filnavn) {
         this.filnavn = filnavn;
     }
 
-    public void readEverything() {
+    public void readEverything(ArrayList<SalgsRapportering> salg) {
+         //TODO
         objects.clear();
+        SalgsRapportering tempSalg;
         try {
             BufferedReader file = fileConnection.readConnection(filnavn);
             String line = file.readLine();
@@ -41,7 +45,12 @@ public class ReadClass {
                     objects.add(new Object(region, country, itemType, salesChannel, orderPriority,
                             orderDate, orderID, shipDate, unitsSold, unitPrice, unitCost,
                             totalRevenue, totalCost, totalProfit));
+                    tempSalg = new SalgsRapportering(region, country, itemType, salesChannel, orderPriority,
+                            orderDate, orderID, shipDate, unitsSold, unitPrice, unitCost,
+                            totalRevenue, totalCost, totalProfit);
+                    salg.add(tempSalg);
                 }
+
                 teller++;
                 System.out.println(region);
                 System.out.println(file.readLine());
