@@ -1,4 +1,4 @@
 package assignment;
 
-public class Main {
+public class Test {
 }
