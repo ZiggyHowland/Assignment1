@@ -6,5 +6,6 @@ public class Main {
         readClass.setFilnavn("assignment1/SalesRecords2.csv");
         readClass.readEverything();
         readClass.printEverythingInObjects();
+        readClass.readOnlySpecificColumns();
     }
 }

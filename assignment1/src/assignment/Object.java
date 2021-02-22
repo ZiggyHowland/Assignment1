@@ -34,4 +34,28 @@ public class Object {
         this.totalCost = totalCost;
         this.totalProfit = totalProfit;
     }
+
+    public String getRegion() {
+        return region;
+    }
+
+    @Override
+    public String toString() {
+        return "Object{" +
+                "region='" + region + '\'' +
+                ", country='" + country + '\'' +
+                ", itemType='" + itemType + '\'' +
+                ", salesChannel='" + salesChannel + '\'' +
+                ", orderPriority='" + orderPriority + '\'' +
+                ", orderDate='" + orderDate + '\'' +
+                ", orderID=" + orderID +
+                ", shipDate='" + shipDate + '\'' +
+                ", unitsSold=" + unitsSold +
+                ", unitPrice=" + unitPrice +
+                ", unitCost=" + unitCost +
+                ", totalRevenue=" + totalRevenue +
+                ", totalCost=" + totalCost +
+                ", totalProfit=" + totalProfit +
+                '}';
+    }
 }
