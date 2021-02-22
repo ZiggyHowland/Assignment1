@@ -19,7 +19,8 @@ public class ReadClass {
         try {
             BufferedReader file = fileConnection.readConnection(filnavn);
             String line = file.readLine();
-            while (line != null) {
+            int teller = 0;
+            while (line != null && teller < 20) {
                 StringTokenizer contents = new StringTokenizer(line, ",");
                 String region = contents.nextToken();
                 String country = contents.nextToken();
@@ -36,18 +37,25 @@ public class ReadClass {
                 double totalCost = Double.parseDouble(contents.nextToken());
                 double totalProfit = Double.parseDouble(contents.nextToken());
 
-                objects.add(new Object(region, country, itemType, salesChannel, orderPriority,
-                        orderDate, orderID, shipDate, unitsSold, unitPrice, unitCost,
-                        totalRevenue, totalCost, totalProfit));
+                if(region.equals("Middle East and North Africa")) {
+                    objects.add(new Object(region, country, itemType, salesChannel, orderPriority,
+                            orderDate, orderID, shipDate, unitsSold, unitPrice, unitCost,
+                            totalRevenue, totalCost, totalProfit));
+                }
+                teller++;
+                System.out.println(region);
+                System.out.println(file.readLine());
             }
+            file.close();
         } catch (Exception e) {
-            System.out.println("e");
+            System.out.println(e);
         }
     }
 
     public void printEverythingInObjects() {
         for (Object o : objects) {
             System.out.println(o.toString());
+            break;
         }
     }
 }
