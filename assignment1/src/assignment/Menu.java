@@ -7,7 +7,7 @@ import java.util.InputMismatchException;
 public class Menu {
     private Ui Ui;
 
-    public void menu(Ui ui_fromScanner){
+    public void menu(Ui ui_fromScanner) throws InputMismatchException{
         this.Ui = ui_fromScanner;
         OpenFile openFile = new OpenFile();
 
@@ -21,21 +21,22 @@ public class Menu {
          do{
 
 
-            System.out.println("Select one of the options by typing the corresponding number: " +
+            System.out.print("Select one of the options by typing the corresponding number: " +
                     "\n1. Open file" +
                     "\n2. Get reports" +
                     "\n3. Edit data in file" +
                     "\n4. Export data to file" +
-                    "\n5. Exit menu");
+                    "\n5. Exit menu" +
+                    "\n\nEnter number: ");
+
+
+
 
              try{
 
-            menuSelect = Ui.inputIntFromUser();
+                 menuSelect = Ui.inputIntFromUser();
 
-
-
-
-            switch (menuSelect){
+                 switch (menuSelect){
                 case 1:
                     System.out.println("Open file selected");
                     //"filnavn: " --> til metode i annen klasse. Prøve å åpne fil. Sette opp exceptions  +lese data
@@ -57,8 +58,10 @@ public class Menu {
                 default:
                     System.out.println("Invalid choice");
             }
+
              }catch (InputMismatchException e){
                  System.out.println("Invalid choice");
+                 Ui.inputStringFromUser();
                  }
 
 
