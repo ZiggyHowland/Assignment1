@@ -29,9 +29,11 @@ public class OpenFile {
             System.out.println(filename + " file exists and is opened");
             getFileInfo(filename);
         } catch (NullPointerException exception) {
-            System.out.println("File doesn't exist 1");
+            System.out.println("NullPointerException");
+        } catch (FileNotFoundException exception) { //FileNotFoundException extends IOException
+            System.out.println("File doesn't exist");
         } catch (IOException e) {
-            System.out.println("File doesn't exists");
+            System.out.println("IOException");
         } catch (Exception e) {
             System.out.println(e);
         }

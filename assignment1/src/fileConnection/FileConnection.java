@@ -9,6 +9,7 @@ public class FileConnection {
             BufferedWriter skriveBuffer = new BufferedWriter(fileConnection);
             PrintWriter writer = new PrintWriter(skriveBuffer);
             return writer;
+        } catch (FileNotFoundException e) {throw new FileNotFoundException();
         } catch(IOException e) {throw new IOException();
         } catch(NullPointerException e) { throw new NullPointerException();
         } catch (Exception e) {return null;}
@@ -20,7 +21,8 @@ public class FileConnection {
             FileReader fileConnection = new FileReader(filename);
             BufferedReader reader = new BufferedReader(fileConnection);
             return reader;
-        } catch(IOException e) {throw new IOException("t");
+        } catch (FileNotFoundException e) {throw new FileNotFoundException();
+        } catch(IOException e) { throw new IOException();
         } catch(NullPointerException e) { throw new NullPointerException();
         } catch(Exception e){return null;}
     }
