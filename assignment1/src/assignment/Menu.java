@@ -7,16 +7,18 @@ import java.util.InputMismatchException;
 public class Menu {
     private Ui Ui;
 
-    public void menu(Ui ui_fromScanner) throws InputMismatchException{
-        this.Ui = ui_fromScanner;
+    public Menu(Ui_fromScanner uiFromScanner) {
+        this.Ui = uiFromScanner;
+    }
+
+    public void menu(){
         OpenFile openFile = new OpenFile();
 
-//        //test input from user
-//        System.out.println("write something:");
-//        String input = Ui.inputStringFromUser();
-
-        int menuSelect;
+        int menuSelect = Ui.inputIntFromUser();
         boolean quit = false;
+
+
+
 
          do{
 
@@ -34,7 +36,7 @@ public class Menu {
 
              try{
 
-                 menuSelect = Ui.inputIntFromUser();
+//                 menuSelect = Ui.inputIntFromUser();
 
                  switch (menuSelect){
                 case 1:
@@ -66,6 +68,7 @@ public class Menu {
 
 
         }while (!quit);
+
     }
 
 }
