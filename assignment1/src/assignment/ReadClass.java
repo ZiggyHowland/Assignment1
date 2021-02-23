@@ -20,8 +20,10 @@ public class ReadClass {
             BufferedReader file = fileConnection.readConnection(filnavn);
             String line = file.readLine();
             int teller = 0;
+            StoreData storedata = new StoreData();
             while (line != null && teller < 5) {
                 //Lage en eget metode for å håndtere dette?
+                //REFAKTORISERE
                 StringTokenizer contents = new StringTokenizer(line, ",");
                 String region = contents.nextToken();
                 String country = contents.nextToken();
@@ -39,7 +41,7 @@ public class ReadClass {
                 double totalProfit = Double.parseDouble(contents.nextToken());
 
                  //if(region.equals("Middle East and North Africa")) {
-                    objects.add(new Object(region, country, itemType, salesChannel, orderPriority,
+                    storedata.addObject(new Object(region, country, itemType, salesChannel, orderPriority,
                             orderDate, orderID, shipDate, unitsSold, unitPrice, unitCost,
                             totalRevenue, totalCost, totalProfit));
                 //}
@@ -60,6 +62,7 @@ public class ReadClass {
                     int teller = 0;
                     double totalUnitCost = 0;
                     while (line != null && teller < 5) {
+                        //REFAKTORISERE
                         StringTokenizer contents = new StringTokenizer(line, ",");
                         String region = contents.nextToken();
                         String country = contents.nextToken();
