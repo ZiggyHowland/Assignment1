@@ -2,7 +2,7 @@ package assignment;
 
 import fileConnection.FileConnection;
 
-import java.io.BufferedReader;
+import java.io.*;
 import java.util.Scanner;
 
 public class OpenFile {
@@ -24,13 +24,33 @@ public class OpenFile {
     public void openFile() {
         try {
             System.out.println("Please enter filename:");
-            String filnavn = scanner.nextLine();
-            BufferedReader file = FileConnection.readConnection("assignment1/"+filnavn);
-            System.out.println(filnavn + " file exists and is working");
+            String filename = scanner.nextLine();
+            BufferedReader file = FileConnection.readConnection("assignment1/" + filename);
+            System.out.println(filename + " file exists and is opened");
+            getFileInfo(filename);
         } catch (NullPointerException exception) {
-            System.out.println("File doesn't exist");
+            System.out.println("File doesn't exist 1");
+        } catch (IOException e) {
+            System.out.println("File doesn't exists");
         } catch (Exception e) {
             System.out.println(e);
         }
     }
-}
+
+    public void getFileInfo(String filename) throws IOException {
+        //try {
+            //System.out.println("Please enter filename:");
+            //String filnavn = scanner.nextLine();
+            BufferedReader file = FileConnection.readConnection("assignment1/" + filename);
+
+            long lines = 0;
+
+            try (BufferedReader reader = new BufferedReader(new FileReader("assignment1/" + filename))) {
+                while (reader.readLine() != null) lines++;
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            System.out.println("Number of lines: " + lines);
+
+        }
+    }
