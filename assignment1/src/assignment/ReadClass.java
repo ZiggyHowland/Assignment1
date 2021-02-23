@@ -1,30 +1,28 @@
 package assignment;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
-import SalgsRapportering.SalgsRapportering;
-import fileConnection.fileConnection;
+import fileConnection.FileConnection;
 
 public class ReadClass {
     ArrayList<Object> objects = new ArrayList<>();
-    //TODO
-
     private String filnavn;
+
     public void setFilnavn(String filnavn) {
         this.filnavn = filnavn;
     }
 
-    public void readEverything(ArrayList<SalgsRapportering> salg) {
-         //TODO
+    public void readEverything() {
         objects.clear();
-        SalgsRapportering tempSalg;
         try {
-            BufferedReader file = fileConnection.readConnection(filnavn);
+            BufferedReader file = FileConnection.readConnection(filnavn);
             String line = file.readLine();
             int teller = 0;
-            while (line != null && teller < 20) {
+            StoreData storedata = new StoreData();
+            while (line != null && teller < 5) {
                 StringTokenizer contents = new StringTokenizer(line, ",");
                 String region = contents.nextToken();
                 String country = contents.nextToken();
@@ -41,30 +39,69 @@ public class ReadClass {
                 double totalCost = Double.parseDouble(contents.nextToken());
                 double totalProfit = Double.parseDouble(contents.nextToken());
 
-                if(region.equals("Middle East and North Africa")) {
-                    objects.add(new Object(region, country, itemType, salesChannel, orderPriority,
-                            orderDate, orderID, shipDate, unitsSold, unitPrice, unitCost,
-                            totalRevenue, totalCost, totalProfit));
-                    tempSalg = new SalgsRapportering(region, country, itemType, salesChannel, orderPriority,
-                            orderDate, orderID, shipDate, unitsSold, unitPrice, unitCost,
-                            totalRevenue, totalCost, totalProfit);
-                    salg.add(tempSalg);
-                }
-
+                //if(region.equals("Middle East and North Africa")) {
+                storedata.addObject(new Object(region, country, itemType, salesChannel, orderPriority,
+                        orderDate, orderID, shipDate, unitsSold, unitPrice, unitCost,
+                        totalRevenue, totalCost, totalProfit));
+                //}
                 teller++;
-                System.out.println(region);
-                System.out.println(file.readLine());
+                line = file.readLine();
             }
             file.close();
+        } catch (NullPointerException exception) {
+            throw new NullPointerException();
+            //System.out.println(exception);
         } catch (Exception e) {
             System.out.println(e);
         }
     }
 
+    public void readOnlySpecificColumns() {
+        objects.clear();
+                try {
+                    BufferedReader file = FileConnection.readConnection(filnavn);
+                    String line = file.readLine();
+                    int teller = 0;
+                    double totalUnitCost = 0;
+                    while (line != null && teller < 5) {
+                        //REFAKTORISERE
+                        double unitCost = getUnitCost(line);
+
+                        totalUnitCost += unitCost;
+                        teller++;
+                        line = file.readLine();
+                    }
+                    System.out.println("Total unit costs is " + totalUnitCost);
+                    file.close();
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+
+    }
+
+    private double getUnitCost(String line) {
+        StringTokenizer contents = new StringTokenizer(line, ",");
+        String region = contents.nextToken();
+        String country = contents.nextToken();
+        String itemType = contents.nextToken();
+        String salesChannel = contents.nextToken();
+        String orderPriority = contents.nextToken();
+        String orderDate = contents.nextToken();
+        int orderID = Integer.parseInt(contents.nextToken());
+        String shipDate = contents.nextToken();
+        int unitsSold = Integer.parseInt(contents.nextToken());
+        double unitPrice = Double.parseDouble(contents.nextToken());
+        double unitCost = Double.parseDouble(contents.nextToken());
+        double totalRevenue = Double.parseDouble(contents.nextToken());
+        double totalCost = Double.parseDouble(contents.nextToken());
+        double totalProfit = Double.parseDouble(contents.nextToken());
+        return unitCost;
+    }
+
     public void printEverythingInObjects() {
+        System.out.println();
         for (Object o : objects) {
             System.out.println(o.toString());
-            break;
         }
     }
 }
