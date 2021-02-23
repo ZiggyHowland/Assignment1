@@ -66,12 +66,6 @@ public class Menu {
 
 
         }while (!quit);
-
-
-
     }
-
-
-//TODO fix catch block. Input error
 
 }
