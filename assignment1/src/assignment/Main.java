@@ -1,27 +1,27 @@
 package assignment;
 
-import SalgsRapportering.SalgsRapportering;
-
-import java.security.spec.DSAGenParameterSpec;
-import java.util.ArrayList;
-import java.util.LinkedList;
+import assignment.dependencies.Ui_fromScanner;
 
 public class Main {
+
+
     public static void main(String[] args) {
 
-        // Konsturerer arrayobjekt som holder alle salg
-        ArrayList<SalgsRapportering> alleSalg = new ArrayList<>();
-        SalgsRapportering temp;
 
-        ReadClass readClass = new ReadClass();
-        readClass.setFilnavn("assignment1/SalesRecords2.csv");
-        readClass.readEverything(alleSalg);
-        readClass.printEverythingInObjects();
-
-        //Make some simple test on
-        temp = alleSalg.get(1);
-        System.out.println(temp.getTotalCost());
-
-
+        Menu instanciateMenu = new Menu();
+        instanciateMenu.menu(new Ui_fromScanner());
     }
+    /*
+        try {
+            ReadClass readClass = new ReadClass();
+            readClass.setFilnavn("assignment1/SalesRecords3.csv");
+            readClass.readEverything();
+            readClass.printEverythingInObjects();
+            readClass.readOnlySpecificColumns();
+        } catch (NullPointerException exception) {
+            System.out.println("Not able to open file - wrong filename");
+        }
+    }
+
+     */
 }
