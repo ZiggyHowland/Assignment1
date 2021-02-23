@@ -2,38 +2,63 @@ package assignment;
 import assignment.dependencies.Ui;
 import assignment.dependencies.Ui_fromScanner;
 
+import java.util.InputMismatchException;
+
 public class Menu {
     private Ui Ui;
 
     public void menu(Ui ui_fromScanner){
         this.Ui = ui_fromScanner;
 
-        //test input from user
-        System.out.println("write something:");
-        String input = Ui.inputStringFromUser();
+//        //test input from user
+//        System.out.println("write something:");
+//        String input = Ui.inputStringFromUser();
 
-        System.out.println(input);
         int menuSelect;
         boolean quit = false;
-        do{
-            System.out.println("select 1-3");
+
+         do{
+
+
+            System.out.println("Select one of the options by typing the corresponding number: " +
+                    "\n1. Open file" +
+                    "\n2. Get reports" +
+                    "\n3. Edit data in file" +
+                    "\n4. Export data to file" +
+                    "\n5. Exit menu");
+
+             try{
+
             menuSelect = Ui.inputIntFromUser();
+
+
+
 
             switch (menuSelect){
                 case 1:
-                    System.out.println("option 1 selected");
+                    System.out.println("Open file selected");
                     //"filnavn: " --> til metode i annen klasse. Prøve å åpne fil. Sette opp exceptions  +lese data
                     break;
                 case 2:
-                    System.out.println("option 2 selected");
+                    System.out.println("Get reports");
                     break;
                 case 3:
-                    System.out.println("quit");
+                    System.out.println("Edit data selected");
+                    break;
+                case 4:
+                    System.out.println("Export data selected");
+                    break;
+                case 5:
+                    System.out.println("Exiting menu");
                     quit = true;
                     break;
                 default:
-                    System.out.println("invalid choice");
+                    System.out.println("Invalid choice");
             }
+             }catch (InputMismatchException e){
+                 System.out.println("Invalid choice");
+                 }
+
 
         }while (!quit);
 
@@ -42,6 +67,6 @@ public class Menu {
     }
 
 
-
+//TODO fix catch block. Input error
 
 }
