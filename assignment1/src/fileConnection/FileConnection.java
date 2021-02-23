@@ -2,7 +2,7 @@ package fileConnection;
 
 import java.io.*; //BufferedReader, BufferedWriter, FileReader, FileWriter, IOException, PrintWriter ...
 
-public class fileConnection {
+public class FileConnection {
     public static PrintWriter writeConnection(String filename) {
         try {
             FileWriter filForbindelse = new FileWriter(filename);
@@ -10,7 +10,7 @@ public class fileConnection {
             PrintWriter writer = new PrintWriter(skriveBuffer);
             return writer;
         }catch(IOException e) {return null;}
-    } //Metode
+    }
 
     public static BufferedReader readConnection(String filename) {
         try {
@@ -18,6 +18,6 @@ public class fileConnection {
             BufferedReader reader = new BufferedReader(filForbindelse);
             return reader;
         }catch(IOException e){return null;}
-    } //metode{
+    }
 
 }

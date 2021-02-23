@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
-import fileConnection.fileConnection;
+import fileConnection.FileConnection;
 
 public class ReadClass {
     ArrayList<Object> objects = new ArrayList<>();
@@ -17,13 +17,11 @@ public class ReadClass {
     public void readEverything() {
         objects.clear();
         try {
-            BufferedReader file = fileConnection.readConnection(filnavn);
+            BufferedReader file = FileConnection.readConnection(filnavn);
             String line = file.readLine();
             int teller = 0;
             StoreData storedata = new StoreData();
             while (line != null && teller < 5) {
-                //Lage en eget metode for å håndtere dette?
-                //REFAKTORISERE
                 StringTokenizer contents = new StringTokenizer(line, ",");
                 String region = contents.nextToken();
                 String country = contents.nextToken();
@@ -57,27 +55,13 @@ public class ReadClass {
     public void readOnlySpecificColumns() {
         objects.clear();
                 try {
-                    BufferedReader file = fileConnection.readConnection(filnavn);
+                    BufferedReader file = FileConnection.readConnection(filnavn);
                     String line = file.readLine();
                     int teller = 0;
                     double totalUnitCost = 0;
                     while (line != null && teller < 5) {
                         //REFAKTORISERE
-                        StringTokenizer contents = new StringTokenizer(line, ",");
-                        String region = contents.nextToken();
-                        String country = contents.nextToken();
-                        String itemType = contents.nextToken();
-                        String salesChannel = contents.nextToken();
-                        String orderPriority = contents.nextToken();
-                        String orderDate = contents.nextToken();
-                        int orderID = Integer.parseInt(contents.nextToken());
-                        String shipDate = contents.nextToken();
-                        int unitsSold = Integer.parseInt(contents.nextToken());
-                        double unitPrice = Double.parseDouble(contents.nextToken());
-                        double unitCost = Double.parseDouble(contents.nextToken());
-                        double totalRevenue = Double.parseDouble(contents.nextToken());
-                        double totalCost = Double.parseDouble(contents.nextToken());
-                        double totalProfit = Double.parseDouble(contents.nextToken());
+                        double unitCost = getUnitCost(line);
 
                         totalUnitCost += unitCost;
                         teller++;
@@ -89,6 +73,25 @@ public class ReadClass {
                     System.out.println(e);
                 }
 
+    }
+
+    private double getUnitCost(String line) {
+        StringTokenizer contents = new StringTokenizer(line, ",");
+        String region = contents.nextToken();
+        String country = contents.nextToken();
+        String itemType = contents.nextToken();
+        String salesChannel = contents.nextToken();
+        String orderPriority = contents.nextToken();
+        String orderDate = contents.nextToken();
+        int orderID = Integer.parseInt(contents.nextToken());
+        String shipDate = contents.nextToken();
+        int unitsSold = Integer.parseInt(contents.nextToken());
+        double unitPrice = Double.parseDouble(contents.nextToken());
+        double unitCost = Double.parseDouble(contents.nextToken());
+        double totalRevenue = Double.parseDouble(contents.nextToken());
+        double totalCost = Double.parseDouble(contents.nextToken());
+        double totalProfit = Double.parseDouble(contents.nextToken());
+        return unitCost;
     }
 
     public void printEverythingInObjects() {
