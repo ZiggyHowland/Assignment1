@@ -56,6 +56,10 @@ public class ReadClass {
         }
     }
 
+    public void countRows() {
+        //todo
+    }
+
     public void readOnlySpecificColumns() {
         objects.clear();
                 try {

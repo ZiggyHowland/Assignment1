@@ -9,6 +9,7 @@ public class Menu {
 
     public void menu(Ui ui_fromScanner){
         this.Ui = ui_fromScanner;
+        OpenFile openFile = new OpenFile();
 
 //        //test input from user
 //        System.out.println("write something:");
@@ -38,6 +39,7 @@ public class Menu {
                 case 1:
                     System.out.println("Open file selected");
                     //"filnavn: " --> til metode i annen klasse. Prøve å åpne fil. Sette opp exceptions  +lese data
+                    openFile.openFile();
                     break;
                 case 2:
                     System.out.println("Get reports");
