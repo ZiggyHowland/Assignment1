@@ -24,7 +24,7 @@ public class SalgsRapportering {
 
 
     //public SalgsRapportering() {
-     //   System.out.println("heisann1");
+    //   System.out.println("heisann1");
     //}
 
 
