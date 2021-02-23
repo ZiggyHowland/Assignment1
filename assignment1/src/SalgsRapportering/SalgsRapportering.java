@@ -50,8 +50,6 @@ public class SalgsRapportering {
 
 
     //Making some simple getters for test purposes:
-
-
     public double getTotalRevenue() {
         return totalRevenue;
     }

@@ -11,4 +11,10 @@ public class FinalReporting {
     public FinalReporting(ArrayList<SalgsRapportering> allData) {
         this.allData = allData;
     }
+
+
+    public int sumSalg(){
+        return 1;
+
+    }
 }
