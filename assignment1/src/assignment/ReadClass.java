@@ -1,6 +1,7 @@
 package assignment;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
@@ -38,15 +39,18 @@ public class ReadClass {
                 double totalCost = Double.parseDouble(contents.nextToken());
                 double totalProfit = Double.parseDouble(contents.nextToken());
 
-                 //if(region.equals("Middle East and North Africa")) {
-                    storedata.addObject(new Object(region, country, itemType, salesChannel, orderPriority,
-                            orderDate, orderID, shipDate, unitsSold, unitPrice, unitCost,
-                            totalRevenue, totalCost, totalProfit));
+                //if(region.equals("Middle East and North Africa")) {
+                storedata.addObject(new Object(region, country, itemType, salesChannel, orderPriority,
+                        orderDate, orderID, shipDate, unitsSold, unitPrice, unitCost,
+                        totalRevenue, totalCost, totalProfit));
                 //}
                 teller++;
                 line = file.readLine();
             }
             file.close();
+        } catch (NullPointerException exception) {
+            throw new NullPointerException();
+            //System.out.println(exception);
         } catch (Exception e) {
             System.out.println(e);
         }
