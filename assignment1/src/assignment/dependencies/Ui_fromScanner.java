@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class Ui_fromScanner implements Ui{
 
-//public class Ui_fromScanner implements Ui {
 
     private Scanner inputFromUser = new Scanner(System.in);
 

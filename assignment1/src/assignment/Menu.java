@@ -14,14 +14,11 @@ public class Menu {
     public void menu(){
         OpenFile openFile = new OpenFile();
 
-        int menuSelect = Ui.inputIntFromUser();
+
         boolean quit = false;
 
 
-
-
          do{
-
 
             System.out.print("Select one of the options by typing the corresponding number: " +
                     "\n1. Open file" +
@@ -31,12 +28,8 @@ public class Menu {
                     "\n5. Exit menu" +
                     "\n\nEnter number: ");
 
-
-
-
              try{
-
-//                 menuSelect = Ui.inputIntFromUser();
+                 int menuSelect = Ui.inputIntFromUser();
 
                  switch (menuSelect){
                 case 1:

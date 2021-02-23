@@ -21,10 +21,11 @@ public class OpenFile {
         }
     }
 
-    public void openFile() {
+    public String openFile(){
+
         try {
             System.out.println("Please enter filename:");
-            String filename = scanner.nextLine();
+            String filename = scanner.next();
             BufferedReader file = FileConnection.readConnection("assignment1/" + filename);
             System.out.println(filename + " file exists and is opened");
             getFileInfo(filename);
@@ -32,11 +33,13 @@ public class OpenFile {
             System.out.println("NullPointerException");
         } catch (FileNotFoundException exception) { //FileNotFoundException extends IOException
             System.out.println("File doesn't exist");
+            return ("File doesn't exist");
         } catch (IOException e) {
             System.out.println("IOException");
         } catch (Exception e) {
             System.out.println(e);
         }
+        return null;
     }
 
     public void getFileInfo(String filename) throws IOException {
