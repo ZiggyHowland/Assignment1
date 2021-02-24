@@ -43,7 +43,7 @@ public class OpenCSV {
             System.out.println(getFilepath()+filename);
             CSVWriter writer = new CSVWriter(new FileWriter(getFilepath()+filename, true));
             List<String[]> therows = new ArrayList<>();
-            private String region;
+            /* private String region;
             private String country;
             private String itemType;
             private String salesChannel;
@@ -56,7 +56,7 @@ public class OpenCSV {
             private double unitCost;
             private double totalRevenue;
             private double totalCost;
-            private double totalProfit;
+            private double totalProfit; */
 
             String[] header = new String[]{"Region", "Name", "OrderId", "Cost"};
             therows.add(header);

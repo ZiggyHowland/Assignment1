@@ -15,7 +15,7 @@ public class ReadClass {
     public void readEverything(String filename) {
         //objects.clear();
         try {
-            BufferedReader file = FileConnection.readConnection(filename);
+            BufferedReader file = FileConnection.readConnection(OpenFile.getFilepath()+filename);
             String line = file.readLine();
             int teller = 0;
             while (line != null && teller < 5) {

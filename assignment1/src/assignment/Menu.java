@@ -37,10 +37,11 @@ public class Menu {
                     testOpenFile(openFile);
                     break;
                 case 2:
+                    System.out.println("Get reports");
                     String filename = testOpenFile(openFile);
                     readClass.readEverything(filename);
-                    storedata.getObjects();
-                    System.out.println("Get reports");
+                    int size = storedata.getObjectsSize();
+                    System.out.println("Size: " + size);
 
                     //add/put valgte data rapporter i Array / hashmap el. - kan eksporteres senere
                     break;
