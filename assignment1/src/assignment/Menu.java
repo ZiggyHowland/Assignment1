@@ -35,10 +35,14 @@ public class Menu {
                 case 1:
                     System.out.println("Open file selected");
                     //"filnavn: " --> til metode i annen klasse. Prøve å åpne fil. Sette opp exceptions  +lese data
-                    openFile.openFile();
+                    System.out.println("Please enter filename:");
+                    String fileName = Ui.inputStringFromUser();
+                    System.out.println("You entered: "+fileName);
+                    openFile.openFile(fileName);
                     break;
                 case 2:
                     System.out.println("Get reports");
+                    //add/put valgte data rapporter i Array / hashmap el. - kan eksporteres senere
                     break;
                 case 3:
                     System.out.println("Edit data selected");

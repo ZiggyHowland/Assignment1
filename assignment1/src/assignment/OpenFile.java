@@ -8,6 +8,11 @@ import java.util.Scanner;
 public class OpenFile {
     Scanner scanner = new Scanner(System.in);
     ReadClass readClass = new ReadClass();
+    long lines = 0;
+
+    public long getLines() {
+        return lines;
+    }
 
     public void read() {
         try {
@@ -21,11 +26,11 @@ public class OpenFile {
         }
     }
 
-    public String openFile(){
+    public String openFile(String filename){
 
         try {
-            System.out.println("Please enter filename:");
-            String filename = scanner.next();
+//            System.out.println("Please enter filename:");
+//            String filename = scanner.next();
             BufferedReader file = FileConnection.readConnection("assignment1/" + filename);
             System.out.println(filename + " file exists and is opened");
             getFileInfo(filename);
@@ -33,6 +38,7 @@ public class OpenFile {
             System.out.println("NullPointerException");
         } catch (FileNotFoundException exception) { //FileNotFoundException extends IOException
             System.out.println("File doesn't exist");
+            scanner.next();
             return ("File doesn't exist");
         } catch (IOException e) {
             System.out.println("IOException");
@@ -48,7 +54,7 @@ public class OpenFile {
             //String filnavn = scanner.nextLine();
             BufferedReader file = FileConnection.readConnection("assignment1/" + filename);
 
-            long lines = 0;
+
 
             try (BufferedReader reader = new BufferedReader(new FileReader("assignment1/" + filename))) {
                 while (reader.readLine() != null) lines++;
