@@ -19,7 +19,7 @@ public class OpenCSV {
     Scanner scanner = new Scanner(System.in);
     //private final String filepath = "production/assignment1/";
 
-    public void readEverythingWithOpenCSV(String filename) {
+    public static void readEverythingWithOpenCSV(String filename) {
         try {
             CSVReader reader = new CSVReader(new FileReader(getFilepath()+filename));
             String[] nextline;
@@ -29,7 +29,7 @@ public class OpenCSV {
                     System.out.println(Arrays.toString(nextline));
                 }
             }
-            System.out.println("CSV Read complete");
+            System.out.println("CSV Read complete\n");
         } catch (FileNotFoundException e) {
             System.out.println("File doesn't exist");
         } catch (Exception e) {

@@ -1,11 +1,15 @@
 package assignment;
 import assignment.dependencies.Ui;
 import assignment.dependencies.Ui_fromScanner;
+import assignment.openCSV.OpenCSV;
+import assignment.openCSV.OpenCSV_AvailableFiles;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
+import java.util.Scanner;
 
 public class Menu {
     private Ui Ui;
@@ -18,6 +22,9 @@ public class Menu {
         OpenFile openFile = new OpenFile();
         StoreData storedata = new StoreData();
         ReadClass readClass = new ReadClass();
+        OpenCSV openCSV = new OpenCSV();
+        Scanner scanner = new Scanner(System.in);
+        final File f = new File("production/assignment1");
 
         boolean quit = false;
 
@@ -25,41 +32,65 @@ public class Menu {
          do{
 
             System.out.print("Select one of the options by typing the corresponding number: " +
-                    "\n1. Open file" +
-                    "\n2. Get reports" +
-                    "\n3. Edit data in file" +
-                    "\n4. Export data to file" +
-                    "\n5. Exit menu" +
+                    "\n1. Test if file exists and number of lines" +
+                    "\n2. Get report for xxxx (total unit cost in Europe?)" +
+                    "\n3. Get report for xxxx (total unit cost in Middle East?)" +
+                    "\n4. Get report for xxxx (Average unit cost in Europe?)" +
+                    "\n5. Edit data in file" +
+                    "\n6. Export data to file" +
+                    "\n7. Read everything in file" +
+                    "\n8. Read only specific line in file" +
+                    "\n9. Write to file" +
+                    "\n10. Exit menu" +
                     "\n\nEnter number: ");
 
              try{
                  int menuSelect = Ui.inputIntFromUser();
 
                  switch (menuSelect){
-                case 1:
-                    testOpenFile(openFile);
-                    break;
-                case 2:
-                    System.out.println("Get reports");
-                    String filename = testOpenFile(openFile);
-                    readClass.readEverything(filename);
-                    int size = storedata.getObjectsSize();
-                    System.out.println("Size: " + size);
-
-                    //add/put valgte data rapporter i Array / hashmap el. - kan eksporteres senere
-                    break;
-                case 3:
-                    System.out.println("Edit data selected");
-                    break;
-                case 4:
-                    System.out.println("Export data selected");
-                    break;
-                case 5:
-                    System.out.println("Exiting menu");
-                    quit = true;
-                    break;
-                default:
-                    System.out.println("Invalid choice");
+                     case 1:
+                         System.out.println("Test if file exists and number of lines");
+                         testOpenFile(openFile);
+                         break;
+                    case 2:
+                        System.out.println("Get report for xxxx (total unit cost in Europe?)");
+                        String filename = testOpenFile(openFile);
+                        readClass.readEverything(filename);
+                        int size = storedata.getObjectsSize();
+                        System.out.println("Size: " + size);
+                        //add/put valgte data rapporter i Array / hashmap el. - kan eksporteres senere
+                        break;
+                    case 3:
+                        System.out.println("Get report for xxxx (total unit cost in Middle East?)");
+                        break;
+                    case 4:
+                        System.out.println("Get report for xxxx (Average unit cost in Europe?)");
+                        break;
+                    case 5:
+                        System.out.println("Edit data in file");
+                        break;
+                    case 6:
+                        System.out.println("Export data to file");
+                         break;
+                    case 7:
+                        System.out.println("Read everything in file");
+                        OpenCSV_AvailableFiles.printAvailableFiles(f);
+                        OpenCSV.readEverythingWithOpenCSV(testOpenFile(openFile));
+                         break;
+                    case 8:
+                        System.out.println("Read only specific line in file");
+                        break;
+                    case 9:
+                        System.out.println("Write to file");
+                        OpenCSV_AvailableFiles.printAvailableFiles(f);
+                        openCSV.writeToFileWithStringsOpenCSV(testOpenFile(openFile));
+                        break;
+                    case 10:
+                        System.out.println("Exiting menu...");
+                        quit = true;
+                        break;
+                    default:
+                        System.out.println("Invalid choice");
             }
 
              }catch (InputMismatchException e){ System.out.println("Invalid choice");
