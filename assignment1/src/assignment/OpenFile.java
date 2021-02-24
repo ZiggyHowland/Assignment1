@@ -56,6 +56,7 @@ public class OpenFile {
             //System.out.println("Please enter filename:");
             //String filnavn = scanner.nextLine();
             BufferedReader file = FileConnection.readConnection(filepath + filename);
+            int lines = 0;
 
             try (BufferedReader reader = new BufferedReader(new FileReader(filepath + filename))) {
                 while (reader.readLine() != null) lines++;
