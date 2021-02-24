@@ -17,6 +17,7 @@ public class OpenCSV {
             CSVReader reader = new CSVReader(new FileReader("assignment1/"+filename));
             String[] nextline;
             while ((nextline = reader.readNext()) != null) {
+                System.out.println();
                 if (nextline != null) {
                     System.out.println(Arrays.toString(nextline));
                 }
@@ -32,7 +33,6 @@ public class OpenCSV {
 
     public void writeToFileWithStringsOpenCSV(String filename) {
         try {
-            String youtube = "https://www.youtube.com/watch?v=sgGGjisdNPA&ab_channel=MikeM%C3%B8llerNielsen";
             System.out.println("assignment1/"+filename.concat(".csv"));
             CSVWriter writer = new CSVWriter(new FileWriter("assignment1/"+filename.concat(".csv"), true));
             List<String[]> therows = new ArrayList<>();

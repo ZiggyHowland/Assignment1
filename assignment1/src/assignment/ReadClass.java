@@ -8,20 +8,20 @@ import java.util.StringTokenizer;
 import fileConnection.FileConnection;
 
 public class ReadClass {
-    ArrayList<Object> objects = new ArrayList<>();
+    //ArrayList<Object> objects = new ArrayList<>();
     private String filnavn;
+    StoreData storedata = new StoreData();
 
-    public void setFilnavn(String filnavn) {
+    /*public void setFilnavn(String filnavn) {
         this.filnavn = filnavn;
-    }
+    } */
 
-    public void readEverything() {
-        objects.clear();
+    public void readEverything(String filename) {
+        //objects.clear();
         try {
-            BufferedReader file = FileConnection.readConnection(filnavn);
+            BufferedReader file = FileConnection.readConnection(filename);
             String line = file.readLine();
             int teller = 0;
-            StoreData storedata = new StoreData();
             while (line != null && teller < 5) {
                 StringTokenizer contents = new StringTokenizer(line, ",");
                 String region = contents.nextToken();
@@ -30,7 +30,7 @@ public class ReadClass {
                 String salesChannel = contents.nextToken();
                 String orderPriority = contents.nextToken();
                 String orderDate = contents.nextToken();
-                int orderID = Integer.parseInt(contents.nextToken());
+                String orderId = contents.nextToken();
                 String shipDate = contents.nextToken();
                 int unitsSold = Integer.parseInt(contents.nextToken());
                 double unitPrice = Double.parseDouble(contents.nextToken());
@@ -41,7 +41,7 @@ public class ReadClass {
 
                 //if(region.equals("Middle East and North Africa")) {
                 storedata.addObject(new Object(region, country, itemType, salesChannel, orderPriority,
-                        orderDate, orderID, shipDate, unitsSold, unitPrice, unitCost,
+                        orderDate, orderId, shipDate, unitsSold, unitPrice, unitCost,
                         totalRevenue, totalCost, totalProfit));
                 //}
                 teller++;
@@ -61,7 +61,7 @@ public class ReadClass {
     }
 
     public void readOnlySpecificColumns() {
-        objects.clear();
+        //objects.clear();
                 try {
                     BufferedReader file = FileConnection.readConnection(filnavn);
                     String line = file.readLine();
@@ -102,10 +102,11 @@ public class ReadClass {
         return unitCost;
     }
 
-    public void printEverythingInObjects() {
+    //For eksempel Rapport-klasse
+    /* public void printEverythingInObjects() {
         System.out.println();
         for (Object o : objects) {
             System.out.println(o.toString());
         }
-    }
+    } */
 }
