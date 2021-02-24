@@ -39,6 +39,10 @@ public class Object {
         return region;
     }
 
+    public int getUnitsSold() {
+        return unitsSold;
+    }
+
     public  double getTotalProfit(){
         return totalProfit;
     }

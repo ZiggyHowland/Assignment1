@@ -17,4 +17,8 @@ public class StoreData {
     public Object getItem(int index) {
         return objects.get(index);
     }
+
+    public int sizeOfReport (){
+        return objects.size();
+    }
 }

@@ -11,14 +11,10 @@ public class Menu {
         this.Ui = uiFromScanner;
     }
 
-    public void menu(){
+    public void menu(StoreData storedata){
         OpenFile openFile = new OpenFile();
-
-
         boolean quit = false;
-
-
-         do{
+        do{
 
             System.out.print("Select one of the options by typing the corresponding number: " +
                     "\n1. Open file" +
@@ -42,7 +38,7 @@ public class Menu {
                     break;
                 case 2:
                     System.out.println("Get reports");
-                    //add/put valgte data rapporter i Array / hashmap el. - kan eksporteres senere
+                    System.out.println("size is " + storedata.sizeOfReport());
                     break;
                 case 3:
                     System.out.println("Edit data selected");
