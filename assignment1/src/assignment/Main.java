@@ -2,6 +2,7 @@ package assignment;
 
 import assignment.dependencies.Ui_fromScanner;
 
+
 public class Main {
 
 
@@ -9,6 +10,7 @@ public class Main {
 
         Menu instanciateMenu = new Menu();
         instanciateMenu.menu(new Ui_fromScanner());
+
     }
 
 }

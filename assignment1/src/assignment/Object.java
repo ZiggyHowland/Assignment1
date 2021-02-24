@@ -39,6 +39,10 @@ public class Object {
         return region;
     }
 
+    public  double getTotalProfit(){
+        return totalProfit;
+    }
+
     @Override
     public String toString() {
         return "Object{" +

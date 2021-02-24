@@ -12,7 +12,7 @@ public class OpenFile {
     public void read() {
         try {
             ReadClass readClass = new ReadClass();
-            readClass.setFilnavn("assignment1/SalesRecords3.csv");
+            readClass.setFilnavn("assignment1/SalesRecords2.csv");
             readClass.readEverything();
             readClass.printEverythingInObjects();
             readClass.readOnlySpecificColumns();

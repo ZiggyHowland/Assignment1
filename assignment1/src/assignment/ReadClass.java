@@ -4,11 +4,13 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
+import java.lang.*;
 
 import fileConnection.FileConnection;
 
-public class ReadClass {
+public class ReadClass<profit> {
     ArrayList<Object> objects = new ArrayList<>();
+    StoreData storedata = new StoreData();
     private String filnavn;
 
     public void setFilnavn(String filnavn) {
@@ -21,7 +23,7 @@ public class ReadClass {
             BufferedReader file = FileConnection.readConnection(filnavn);
             String line = file.readLine();
             int teller = 0;
-            StoreData storedata = new StoreData();
+            //StoreData storedata = new StoreData();
             while (line != null && teller < 5) {
                 StringTokenizer contents = new StringTokenizer(line, ",");
                 String region = contents.nextToken();
@@ -54,7 +56,15 @@ public class ReadClass {
         } catch (Exception e) {
             System.out.println(e);
         }
+        double profit = storedata.getItem(1).getTotalProfit();
+        System.out.println("Store data " + profit);
     }
+
+    //Total profit
+
+
+
+
 
     public void countRows() {
         //todo

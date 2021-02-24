@@ -1,4 +1,8 @@
 package assignment;
+
+import static InternalTesting.TestDB.TestDB;
+
+import InternalTesting.TestDB;
 import assignment.dependencies.Ui;
 import assignment.dependencies.Ui_fromScanner;
 
@@ -43,6 +47,7 @@ public class Menu {
                     break;
                 case 2:
                     System.out.println("Get reports");
+                    TestDB(); //anta et inteface?
                     break;
                 case 3:
                     System.out.println("Edit data selected");
