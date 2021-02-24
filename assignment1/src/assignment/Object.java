@@ -7,7 +7,7 @@ public class Object {
     private String salesChannel;
     private String orderPriority;
     private String orderDate;
-    private int orderID;
+    private String orderID;
     private String shipDate;
     private int unitsSold;
     private double unitPrice;
@@ -17,7 +17,7 @@ public class Object {
     private double totalProfit;
 
     public Object(String region, String country, String itemType, String salesChannel,
-                  String orderPriority, String orderDate, int orderID, String shipDate, int unitsSold,
+                  String orderPriority, String orderDate, String orderID, String shipDate, int unitsSold,
                   double unitPrice, double unitCost, double totalRevenue, double totalCost, double totalProfit) {
         this.region = region;
         this.country = country;
