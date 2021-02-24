@@ -12,10 +12,6 @@ public class ReadClass {
     private String filnavn;
     StoreData storedata = new StoreData();
 
-    /*public void setFilnavn(String filnavn) {
-        this.filnavn = filnavn;
-    } */
-
     public void readEverything(String filename) {
         //objects.clear();
         try {
