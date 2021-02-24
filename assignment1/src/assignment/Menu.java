@@ -13,7 +13,8 @@ public class Menu {
 
     public void menu(){
         OpenFile openFile = new OpenFile();
-
+        StoreData storedata = new StoreData();
+        ReadClass readClass = new ReadClass();
 
         boolean quit = false;
 
@@ -33,15 +34,14 @@ public class Menu {
 
                  switch (menuSelect){
                 case 1:
-                    System.out.println("Open file selected");
-                    //"filnavn: " --> til metode i annen klasse. Prøve å åpne fil. Sette opp exceptions  +lese data
-                    System.out.println("Please enter filename:");
-                    String fileName = Ui.inputStringFromUser();
-                    System.out.println("You entered: "+fileName);
-                    openFile.openFile(fileName);
+                    testOpenFile(openFile);
                     break;
                 case 2:
+                    String filename = testOpenFile(openFile);
+                    readClass.readEverything(filename);
+                    storedata.getObjects();
                     System.out.println("Get reports");
+
                     //add/put valgte data rapporter i Array / hashmap el. - kan eksporteres senere
                     break;
                 case 3:
@@ -66,6 +66,16 @@ public class Menu {
 
         }while (!quit);
 
+    }
+
+    private String testOpenFile(OpenFile openFile) {
+        System.out.println("Open file selected");
+        //"filnavn: " --> til metode i annen klasse. Prøve å åpne fil. Sette opp exceptions  +lese data
+        System.out.println("Please enter filename:");
+        String fileName = Ui.inputStringFromUser();
+        System.out.println("You entered: "+fileName);
+        openFile.openFile(fileName);
+        return fileName;
     }
 
 }

@@ -11,10 +11,12 @@ import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 import static assignment.OpenFile.getFilepath;
 
 public class OpenCSV {
+    Scanner scanner = new Scanner(System.in);
     //private final String filepath = "production/assignment1/";
 
     public void readEverythingWithOpenCSV(String filename) {
@@ -41,6 +43,21 @@ public class OpenCSV {
             System.out.println(getFilepath()+filename);
             CSVWriter writer = new CSVWriter(new FileWriter(getFilepath()+filename, true));
             List<String[]> therows = new ArrayList<>();
+            private String region;
+            private String country;
+            private String itemType;
+            private String salesChannel;
+            private String orderPriority;
+            private String orderDate;
+            private String orderID;
+            private String shipDate;
+            private int unitsSold;
+            private double unitPrice;
+            private double unitCost;
+            private double totalRevenue;
+            private double totalCost;
+            private double totalProfit;
+
             String[] header = new String[]{"Region", "Name", "OrderId", "Cost"};
             therows.add(header);
             String[] row1 = new String[]{"Europe", "Hans","233333", "205.90"};
