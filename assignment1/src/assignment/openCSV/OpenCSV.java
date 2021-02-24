@@ -13,9 +13,11 @@ import java.util.Arrays;
 import java.util.List;
 
 public class OpenCSV {
+    private final String filepath = "assignment1/production/assignment1/";
+
     public void readEverythingWithOpenCSV(String filename) {
         try {
-            CSVReader reader = new CSVReader(new FileReader("assignment1/"+filename));
+            CSVReader reader = new CSVReader(new FileReader(filepath+filename));
             String[] nextline;
             while ((nextline = reader.readNext()) != null) {
                 System.out.println();
@@ -34,8 +36,8 @@ public class OpenCSV {
 
     public void writeToFileWithStringsOpenCSV(String filename) {
         try {
-            System.out.println("assignment1/"+filename.concat(".csv"));
-            CSVWriter writer = new CSVWriter(new FileWriter("assignment1/"+filename.concat(".csv"), true));
+            System.out.println(filepath+filename.concat(".csv"));
+            CSVWriter writer = new CSVWriter(new FileWriter(filepath+filename.concat(".csv"), true));
             List<String[]> therows = new ArrayList<>();
             String[] header = new String[]{"Region", "Name", "OrderId", "Cost"};
             therows.add(header);
@@ -89,11 +91,14 @@ public class OpenCSV {
     } */
 
 
-        public void parserWithOpenCSV() {
+         /* public void parserWithOpenCSV() {
             try {
                 CSVParser csvParser = new CSVParser();
             } catch (Exception e) {
                 System.out.println(e);
             }
-        }
+         } */
+
+
+    }
 }
