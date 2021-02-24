@@ -14,12 +14,12 @@ public class OpenFile {
         return lines;
     }
 
-    public void read() {
+    public void read(String filename) {
         try {
             ReadClass readClass = new ReadClass();
-            readClass.setFilnavn("assignment1/SalesRecords3.csv");
-            readClass.readEverything();
-            readClass.printEverythingInObjects();
+            //readClass.setFilnavn("assignment1/SalesRecords3.csv");
+            readClass.readEverything(filename);
+            //readClass.printEverythingInObjects();
             readClass.readOnlySpecificColumns();
         } catch (NullPointerException exception) {
             System.out.println("Not able to open file - wrong filename");
