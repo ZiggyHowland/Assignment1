@@ -2,7 +2,10 @@ package assignment;
 import assignment.dependencies.Ui;
 import assignment.dependencies.Ui_fromScanner;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.InputMismatchException;
+import java.util.NoSuchElementException;
 
 public class Menu {
     private Ui Ui;
@@ -11,7 +14,7 @@ public class Menu {
         this.Ui = uiFromScanner;
     }
 
-    public void menu(){
+    public void menu()  {
         OpenFile openFile = new OpenFile();
         StoreData storedata = new StoreData();
         ReadClass readClass = new ReadClass();
@@ -59,10 +62,15 @@ public class Menu {
                     System.out.println("Invalid choice");
             }
 
-             }catch (InputMismatchException e){
-                 System.out.println("Invalid choice");
+             }catch (InputMismatchException e){ System.out.println("Invalid choice");
                  Ui.inputStringFromUser();
-                 }
+             } catch(NoSuchElementException e) { System.out.println("NoSuchElementException()");
+                 Ui.inputStringFromUser();
+             } catch(NullPointerException e) { System.out.println("NullPointerException()");
+                 Ui.inputStringFromUser();
+             } catch (Exception e) { System.out.println("Didn't work");
+                 Ui.inputStringFromUser();
+             }
 
 
         }while (!quit);
