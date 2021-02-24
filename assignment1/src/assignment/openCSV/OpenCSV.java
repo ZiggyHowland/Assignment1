@@ -81,8 +81,7 @@ public class OpenCSV {
                                             totalRevenue+","+totalCost+","+totalProfit};
                 therows.add(row1);
 
-                writer.writeAll(therows); //OBS! WriteAll appender ikke, men sletter nåværende innhold og legger inn linjene over
-                //writer.writeNext(row1);
+                writer.writeAll(therows);
 
                 System.out.println("Do you want to add one more row? 'Yes/No'");
                 oneMore = scanner.nextLine();
