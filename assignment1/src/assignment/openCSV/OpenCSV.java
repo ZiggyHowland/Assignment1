@@ -4,6 +4,7 @@ import com.opencsv.CSVParser;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -49,9 +50,10 @@ public class OpenCSV {
             //writer.writeNext(row1);
             writer.close();
 
+        } catch (FileNotFoundException e) {
+            System.out.println("File doesn't exist");
         } catch (Exception e) {
             System.out.println(e);
-        }
     }
 
     /* public void writeToFileWithObjectsOpenCSV(String filename) {
