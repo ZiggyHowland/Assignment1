@@ -1,4 +1,6 @@
-package assignment;
+package assignment.openCSV;
+
+import assignment.openCSV.OpenCSV;
 
 import java.util.Scanner;
 

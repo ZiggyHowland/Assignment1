@@ -1,4 +1,4 @@
-package assignment;
+package assignment.openCSV;
 
 import com.opencsv.CSVParser;
 import com.opencsv.CSVReader;
