@@ -55,16 +55,15 @@ public class OpenFile {
         //try {
             //System.out.println("Please enter filename:");
             //String filnavn = scanner.nextLine();
-            BufferedReader file = FileConnection.readConnection("assignment1/" + filename);
+            BufferedReader file = FileConnection.readConnection(filepath + filename);
 
 
 
-            try (BufferedReader reader = new BufferedReader(new FileReader("assignment1/" + filename))) {
+            try (BufferedReader reader = new BufferedReader(new FileReader(filepath + filename))) {
                 while (reader.readLine() != null) lines++;
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            System.out.println("Number of lines: " + lines);
-
+            System.out.println("Number of lines: " + lines + "\n");
         }
     }
