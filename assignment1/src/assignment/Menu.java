@@ -7,19 +7,18 @@ import java.util.InputMismatchException;
 public class Menu {
     private Ui Ui;
 
-    public void menu(Ui ui_fromScanner) throws InputMismatchException{
-        this.Ui = ui_fromScanner;
+    public Menu(Ui_fromScanner uiFromScanner) {
+        this.Ui = uiFromScanner;
+    }
+
+    public void menu(){
         OpenFile openFile = new OpenFile();
 
-//        //test input from user
-//        System.out.println("write something:");
-//        String input = Ui.inputStringFromUser();
 
-        int menuSelect;
         boolean quit = false;
 
-         do{
 
+         do{
 
             System.out.print("Select one of the options by typing the corresponding number: " +
                     "\n1. Open file" +
@@ -29,21 +28,21 @@ public class Menu {
                     "\n5. Exit menu" +
                     "\n\nEnter number: ");
 
-
-
-
              try{
-
-                 menuSelect = Ui.inputIntFromUser();
+                 int menuSelect = Ui.inputIntFromUser();
 
                  switch (menuSelect){
                 case 1:
                     System.out.println("Open file selected");
                     //"filnavn: " --> til metode i annen klasse. Prøve å åpne fil. Sette opp exceptions  +lese data
-                    openFile.openFile();
+                    System.out.println("Please enter filename:");
+                    String fileName = Ui.inputStringFromUser();
+                    System.out.println("You entered: "+fileName);
+                    openFile.openFile(fileName);
                     break;
                 case 2:
                     System.out.println("Get reports");
+                    //add/put valgte data rapporter i Array / hashmap el. - kan eksporteres senere
                     break;
                 case 3:
                     System.out.println("Edit data selected");
@@ -66,6 +65,7 @@ public class Menu {
 
 
         }while (!quit);
+
     }
 
 }
