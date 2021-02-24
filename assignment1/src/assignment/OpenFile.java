@@ -9,6 +9,11 @@ public class OpenFile {
     Scanner scanner = new Scanner(System.in);
     ReadClass readClass = new ReadClass();
     long lines = 0;
+    private static final String filepath = "production/assignment1/";
+
+    public static String getFilepath() {
+        return filepath;
+    }
 
     public long getLines() {
         return lines;
@@ -17,7 +22,7 @@ public class OpenFile {
     public void read(String filename) {
         try {
             ReadClass readClass = new ReadClass();
-            //readClass.setFilnavn("assignment1/SalesRecords3.csv");
+            //readClass.setFilnavn(filepath+"SalesRecords3.csv");
             readClass.readEverything(filename);
             //readClass.printEverythingInObjects();
             readClass.readOnlySpecificColumns();
@@ -29,9 +34,7 @@ public class OpenFile {
     public String openFile(String filename){
 
         try {
-//            System.out.println("Please enter filename:");
-//            String filename = scanner.next();
-            BufferedReader file = FileConnection.readConnection("assignment1/" + filename);
+            BufferedReader file = FileConnection.readConnection(filepath + filename);
             System.out.println(filename + " file exists and is opened");
             getFileInfo(filename);
         } catch (NullPointerException exception) {

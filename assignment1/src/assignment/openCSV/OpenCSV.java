@@ -12,12 +12,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static assignment.OpenFile.getFilepath;
+
 public class OpenCSV {
-    private final String filepath = "assignment1/production/assignment1/";
+    //private final String filepath = "production/assignment1/";
 
     public void readEverythingWithOpenCSV(String filename) {
         try {
-            CSVReader reader = new CSVReader(new FileReader(filepath+filename));
+            CSVReader reader = new CSVReader(new FileReader(getFilepath()+filename));
             String[] nextline;
             while ((nextline = reader.readNext()) != null) {
                 System.out.println();
@@ -27,7 +29,7 @@ public class OpenCSV {
             }
             System.out.println("CSV Read complete");
         } catch (FileNotFoundException e) {
-            System.out.println(e);
+            System.out.println("File doesn't exist");
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -36,14 +38,14 @@ public class OpenCSV {
 
     public void writeToFileWithStringsOpenCSV(String filename) {
         try {
-            System.out.println(filepath+filename.concat(".csv"));
-            CSVWriter writer = new CSVWriter(new FileWriter(filepath+filename.concat(".csv"), true));
+            System.out.println(getFilepath()+filename);
+            CSVWriter writer = new CSVWriter(new FileWriter(getFilepath()+filename, true));
             List<String[]> therows = new ArrayList<>();
             String[] header = new String[]{"Region", "Name", "OrderId", "Cost"};
             therows.add(header);
             String[] row1 = new String[]{"Europe", "Hans","233333", "205.90"};
             String[] row2 = new String[]{"Asia", "Fredrik","2333367", "255.11"};
-            String[] row3 = new String[]{"Another region", "Another name","Another orderId", "Another Cost"};
+            String[] row3 = new String[]{"Another region", "Another name","Another orderId", "Another"};
             therows.add(row1);
             therows.add(row2);
             therows.add(row3);
