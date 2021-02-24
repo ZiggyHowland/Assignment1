@@ -57,8 +57,6 @@ public class OpenFile {
             //String filnavn = scanner.nextLine();
             BufferedReader file = FileConnection.readConnection(filepath + filename);
 
-
-
             try (BufferedReader reader = new BufferedReader(new FileReader(filepath + filename))) {
                 while (reader.readLine() != null) lines++;
             } catch (IOException e) {
