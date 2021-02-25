@@ -42,7 +42,8 @@ public class Menu {
                     "\n7. Read everything in file" +
                     "\n8. Read only specific line in file" +
                     "\n9. Write to file" +
-                    "\n10. Exit menu" +
+                    "\n10. Save everything from file" +
+                    "\n11. Exit menu" +
                     "\n\nEnter number: ");
 
              try{
@@ -80,12 +81,6 @@ public class Menu {
                          break;
                     case 8:
                         System.out.println("Read only specific line in file");
-                        OpenCSV_AvailableFiles.printAvailableFiles(f);
-                        OpenCSV.readAndSaveEverythingWithOpenCSV(testOpenFile(openFile));
-                        ArrayList<Object> objects = storedata.getObjects();
-                        for (Object o : objects) {
-                            System.out.println(o.toString());
-                        }
                         break;
                     case 9:
                         System.out.println("Write to file");
@@ -93,6 +88,15 @@ public class Menu {
                         openCSV.writeToFileWithStringsOpenCSV(testOpenFile(openFile));
                         break;
                     case 10:
+                        System.out.println("Save everything from file");
+                        OpenCSV_AvailableFiles.printAvailableFiles(f);
+                        OpenCSV.readAndSaveEverythingWithOpenCSV(testOpenFile(openFile));
+                        ArrayList<Object> objects = storedata.getObjects();
+                        for (Object o : objects) {
+                            System.out.println(o.toString());
+                        }
+                        break;
+                    case 11:
                         System.out.println("Exiting menu...");
                         quit = true;
                         break;
