@@ -147,10 +147,8 @@ public class Menu {
                 } else
                     System.out.println("Invalid input");
             }
-            return;
 
         }
-        return;
     }
 
 
