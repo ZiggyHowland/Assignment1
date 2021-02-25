@@ -2,12 +2,9 @@ package assignment.openCSV;
 
 import assignment.Object;
 import assignment.StoreData;
-import assignment.OpenFile;
-import com.opencsv.CSVParser;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -17,11 +14,20 @@ import java.util.List;
 import java.util.Scanner;
 
 import static assignment.OpenFile.getFilepath;
+import static assignment.OpenFile.getFilepathExport;
 
 public class OpenCSV {
     Scanner scanner = new Scanner(System.in);
     List<String[]> therows = new ArrayList<>();
     //private final String filepath = "production/assignment1/";
+
+    public String getTheRowsAsString() {
+        if (therows.size()>0){
+            return ("Printing current file:\n" + Arrays.deepToString(therows.toArray()));
+        }
+        else
+            return "There is nothing here.";
+    }
 
     public static void readEverythingWithOpenCSV(String filename) {
         try {
@@ -123,7 +129,7 @@ public class OpenCSV {
         try {
             String oneMore = "Yes";
             CSVWriter writer = new CSVWriter(new FileWriter(getFilepath() + filename, true));
-            List<String[]> therows = new ArrayList<>();
+            List<String[]> therowsAdd = new ArrayList<>();
             while (oneMore.equals("Yes") || oneMore.equals("yes")) {
                 //System.out.println(getFilepath() + filename);
                 System.out.println("Region:");
@@ -160,9 +166,9 @@ public class OpenCSV {
                 String[] row1 = new String[]{region+","+country+","+itemType+","+salesChannel+","+orderPriority+","+orderDate+"," +
                                             orderID+","+shipDate+","+unitsSold+","+unitPrice+","+unitPrice+","+unitCost+","+
                                             totalRevenue+","+totalCost+","+totalProfit};
-                therows.add(row1);
+                therowsAdd.add(row1);
 
-                writer.writeAll(therows);
+                writer.writeAll(therowsAdd);
 
                 System.out.println("Do you want to add one more row? 'Yes/No'");
                 oneMore = scanner.nextLine();
@@ -184,12 +190,12 @@ public class OpenCSV {
 
     public void exportChosenDataToFile(String filename){
         try{
-            CSVWriter writer = new CSVWriter(new FileWriter(getFilepath() + filename, true));
+            CSVWriter writer = new CSVWriter(new FileWriter(getFilepathExport() + filename, true));
 
             writer.writeAll(therows);
             writer.close();
 
-
+            System.out.println("Exporting file to: "+getFilepathExport()+filename);
 
 
     } catch (Exception e) {

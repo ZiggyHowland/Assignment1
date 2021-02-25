@@ -11,6 +11,7 @@ public class OpenFile {
     ReadClass readClass = new ReadClass();
     long lines = 0;
     private static final String filepath = "production/assignment1/";
+    private static final String f = "production/assignment1";
     private static final String filepathExport = "production/export/";
     private static final String filepathDelete = "production/delete/";
 
@@ -28,7 +29,7 @@ public class OpenFile {
         try {
             ReadClass readClass = new ReadClass();
             //readClass.setFilnavn(filepath+"SalesRecords3.csv");
-            readClass.readEverything(filename);
+            //readClass.readEverything(filename);
             //readClass.printEverythingInObjects();
             readClass.readOnlySpecificColumns();
         } catch (NullPointerException exception) {

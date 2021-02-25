@@ -3,6 +3,7 @@ package assignment;
 import java.util.ArrayList;
 
 public class StoreData {
+
     ArrayList<Object> objects = new ArrayList<>();
 
     public ArrayList<Object> getObjects() {
@@ -15,5 +16,13 @@ public class StoreData {
 
     public void addObject(Object object) {
         objects.add(object);
+    }
+
+    public Object getItem(int index) {
+        return objects.get(index);
+    }
+
+    public static int sizeOfReport(ArrayList<Object> objects){
+        return objects.size();
     }
 }

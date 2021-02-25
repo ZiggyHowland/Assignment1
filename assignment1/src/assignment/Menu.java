@@ -26,18 +26,19 @@ public class Menu {
         //ReadClass readClass = new ReadClass();
         OpenCSV openCSV = new OpenCSV();
         final File fFilePath = new File(OpenFile.getFilepath());
+        final File fExport = new File(OpenFile.getFilepathExport());
         final File fDelete = new File(OpenFile.getFilePathDelete());
 
         boolean quit = false;
 
 
          do{
-
-            System.out.print("Select one of the options by typing the corresponding number: " +
+             System.out.println(" ");
+            System.out.print("Select one of the options by typing the corresponding number: \n" +
                     "\n1. Test if file exists and number of lines" +
-                    "\n2. Get report for xxxx (total unit cost in Europe?)" +
-                    "\n3. Get report for xxxx (total unit cost in Middle East?)" +
-                    "\n4. Get report for xxxx (Average unit cost in Europe?)" +
+                    "\n2. Get reports overall." +
+                    "\n3. View reports overall. " +
+                    "\n4. View reports per region and country " +
                     "\n5. Edit data in file" +
                     "\n6. Export data to file" +
                     "\n7. Read everything in file" +
@@ -48,6 +49,7 @@ public class Menu {
                     "\n12. Exit menu" +
                     "\n\nEnter number: ");
 
+
              try{
                  int menuSelect = Ui.inputIntFromUser();
 
@@ -57,7 +59,7 @@ public class Menu {
                          testOpenFile(openFile);
                          break;
                     case 2:
-                        System.out.println("Get report for xxxx (total unit cost in Europe?)");
+                        System.out.println("Get reports overall");
                         String filename = testOpenFile(openFile);
                         //readClass.readEverything(filename);
                         int size = storedata.getObjectsSize();
@@ -65,25 +67,43 @@ public class Menu {
                         //add/put valgte data rapporter i Array / hashmap el. - kan eksporteres senere
                         break;
                     case 3:
-                        System.out.println("Get report for xxxx (total unit cost in Middle East?)");
+                        System.out.println("View reports overall");
                         String report = "TEST - link / method to actual report here";
-                        addThisReportToExportFile(openCSV, report);
+                        //addThisReportToExportFile(openCSV, report);
+                        OpenCSV_AvailableFiles.printAvailableFiles(fFilePath);
+                        storedata = OpenCSV.readAndSaveEverythingWithOpenCSV(testOpenFile(openFile));
+                        Reports.mainReport(storedata);
                         break;
                      case 4:
-                        System.out.println("Get report for xxxx (Average unit cost in Europe?)");
+                        System.out.println("View reports per region and country");
                         String report2 = null;
-                        addThisReportToExportFile(openCSV, report2);
+                        OpenCSV_AvailableFiles.printAvailableFiles(fFilePath);
+                        storedata = OpenCSV.readAndSaveEverythingWithOpenCSV(testOpenFile(openFile));
+                        Reports.salesPerRegion(storedata);
+                        //addThisReportToExportFile(openCSV, report2);
                         break;
                     case 5:
                         System.out.println("Edit data in file");
                         OpenCSV_AvailableFiles.printAvailableFiles(fFilePath);
                         break;
                     case 6:
-                        System.out.println("Export data to file");
-                        System.out.println("Enter filename (remember .csv)");
-                        String filenameForExport = Ui.inputStringFromUser();
-                        openCSV.exportChosenDataToFile(filenameForExport);
-                        break;
+                        System.out.println(
+                                "\n1. View current data set to be exported" +
+                                        "\n2. Export data to file" +
+                                        "\n3. Exit menu");
+                        int selectExportMenu = Ui.inputIntFromUser();
+
+                        if (selectExportMenu == 1) {
+                            System.out.println(openCSV.getTheRowsAsString());
+                            break;
+                        }
+                        if (selectExportMenu == 2) {
+                            System.out.println("Export data to file");
+                            System.out.print("Enter filename (remember .csv): ");
+                            String filenameForExport = Ui.inputStringFromUser();
+                            openCSV.exportChosenDataToFile(filenameForExport);
+                            break;
+                        }
                     case 7:
                         System.out.println("Read everything in file");
                         OpenCSV_AvailableFiles.printAvailableFiles(fFilePath);
@@ -99,11 +119,12 @@ public class Menu {
                         OpenCSV_AvailableFiles.printAvailableFiles(fFilePath);
                         openCSV.writeToFileWithStringsOpenCSV(testOpenFile(openFile));
                         break;
-                    case 10:
+                     case 10:
                         System.out.println("Save everything from file");
                         OpenCSV_AvailableFiles.printAvailableFiles(fFilePath);
                         storedata = OpenCSV.readAndSaveEverythingWithOpenCSV(testOpenFile(openFile));
-                        //System.out.println(storedata.getObjectsSize());
+                        System.out.println(storedata.getObjectsSize());
+                        System.out.printf("Omsetning %f5", Reports.sumTotalRevenue(storedata));
                         break;
                     case 11:
                         System.out.println("Delete file\n");
