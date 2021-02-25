@@ -153,15 +153,19 @@ public class Menu {
         return;
     }
 
-    private String testOpenFile(OpenFile openFile) {
+
     private String testOpenFile(OpenFile openFile) throws IOException {
-        System.out.println("Open file selected");
-        //"filnavn: " --> til metode i annen klasse. Prøve å åpne fil. Sette opp exceptions  +lese data
-        System.out.println("Please enter filename:");
-        String fileName = Ui.inputStringFromUser();
-        System.out.println("You entered: "+fileName);
-        openFile.openFile(fileName);
-        return fileName;
+        try {
+            System.out.println("Open file selected");
+            //"filnavn: " --> til metode i annen klasse. Prøve å åpne fil. Sette opp exceptions  +lese data
+            System.out.println("Please enter filename:");
+            String fileName = Ui.inputStringFromUser();
+            System.out.println("You entered: " + fileName);
+            openFile.openFile(fileName);
+            return fileName;
+        } catch (IOException e) {
+            throw new IOException();
+        }
     }
 
     public int getRow() {
