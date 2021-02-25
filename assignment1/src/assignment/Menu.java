@@ -7,12 +7,14 @@ import assignment.openCSV.OpenCSV_AvailableFiles;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class Menu {
     private Ui Ui;
+    Scanner scanner = new Scanner(System.in);
 
     public Menu(Ui_fromScanner uiFromScanner) {
         this.Ui = uiFromScanner;
@@ -23,7 +25,6 @@ public class Menu {
         StoreData storedata = new StoreData();
         ReadClass readClass = new ReadClass();
         OpenCSV openCSV = new OpenCSV();
-        Scanner scanner = new Scanner(System.in);
         final File f = new File("production/assignment1");
 
         boolean quit = false;
@@ -41,7 +42,8 @@ public class Menu {
                     "\n7. Read everything in file" +
                     "\n8. Read only specific line in file" +
                     "\n9. Write to file" +
-                    "\n10. Exit menu" +
+                    "\n10. Save everything from file" +
+                    "\n11. Exit menu" +
                     "\n\nEnter number: ");
 
              try{
@@ -93,6 +95,15 @@ public class Menu {
                         openCSV.writeToFileWithStringsOpenCSV(testOpenFile(openFile));
                         break;
                     case 10:
+                        System.out.println("Save everything from file");
+                        OpenCSV_AvailableFiles.printAvailableFiles(f);
+                        OpenCSV.readAndSaveEverythingWithOpenCSV(testOpenFile(openFile));
+                        ArrayList<Object> objects = storedata.getObjects();
+                        for (Object o : objects) {
+                            System.out.println(o.toString());
+                        }
+                        break;
+                    case 11:
                         System.out.println("Exiting menu...");
                         quit = true;
                         break;
@@ -123,6 +134,13 @@ public class Menu {
         System.out.println("You entered: "+fileName);
         openFile.openFile(fileName);
         return fileName;
+    }
+
+    public int getRow() {
+        System.out.println("Please enter row you want to read:");
+        int row = scanner.nextInt();
+        scanner.nextLine();
+        return row;
     }
 
 }
