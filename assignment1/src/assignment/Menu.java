@@ -77,7 +77,7 @@ public class Menu {
                         break;
                     case 6:
                         System.out.println("Export data to file");
-                        System.out.println("Enter filename (remember .csv)");
+                        System.out.print("Enter filename (remember .csv): ");
                         String filenameForExport = Ui.inputStringFromUser();
                         openCSV.exportChosenDataToFile(filenameForExport);
                         break;
@@ -139,7 +139,8 @@ public class Menu {
                 String addToExport2 = Ui.inputStringFromUser().toLowerCase();
                 if (addToExport2.equals("yes")) {
                     openCSV.addStringToExport(report);
-                    System.out.println("Printing report to export.");
+                    System.out.println("Adding report for export." +
+                            "\nMenu option 6 exports file.\n");
                     break;
                 }
                 if (addToExport2.equals("no")) {

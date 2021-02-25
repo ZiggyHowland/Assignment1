@@ -2,12 +2,9 @@ package assignment.openCSV;
 
 import assignment.Object;
 import assignment.StoreData;
-import assignment.OpenFile;
-import com.opencsv.CSVParser;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -22,6 +19,15 @@ public class OpenCSV {
     Scanner scanner = new Scanner(System.in);
     List<String[]> therows = new ArrayList<>();
     //private final String filepath = "production/assignment1/";
+
+    public void getTherows() {
+        StringBuilder getTheRows = null;
+        for (int i=0; i<=therows.size();i++) {
+            getTheRows.append(therows.get(i));
+
+        }
+        System.out.println(getTheRows);
+    }
 
     public static void readEverythingWithOpenCSV(String filename) {
         try {
@@ -188,7 +194,6 @@ public class OpenCSV {
 
             writer.writeAll(therows);
             writer.close();
-
 
 
 

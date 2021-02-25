@@ -1,5 +1,6 @@
 package assignment;
 
+import assignment.openCSV.OpenCSV;
 import fileConnection.FileConnection;
 
 import java.io.*;
@@ -61,5 +62,5 @@ public class OpenFile {
                 e.printStackTrace();
             }
             System.out.println("Number of lines: " + lines + "\n");
-        }
     }
+}
