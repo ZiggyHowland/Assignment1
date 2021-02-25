@@ -21,13 +21,12 @@ public class OpenCSV {
     List<String[]> therows = new ArrayList<>();
     //private final String filepath = "production/assignment1/";
 
-    public void getTherows() {
-        StringBuilder getTheRows = null;
-        for (int i=0; i<=therows.size();i++) {
-            getTheRows.append(therows.get(i));
-
+    public String getTheRowsAsString() {
+        if (therows.size()>0){
+            return ("Printing current file:\n" + Arrays.deepToString(therows.toArray()));
         }
-        System.out.println(getTheRows);
+        else
+            return "There is nothing here.";
     }
 
     public static void readEverythingWithOpenCSV(String filename) {
@@ -130,7 +129,7 @@ public class OpenCSV {
         try {
             String oneMore = "Yes";
             CSVWriter writer = new CSVWriter(new FileWriter(getFilepath() + filename, true));
-            List<String[]> therows = new ArrayList<>();
+            List<String[]> therowsAdd = new ArrayList<>();
             while (oneMore.equals("Yes") || oneMore.equals("yes")) {
                 //System.out.println(getFilepath() + filename);
                 System.out.println("Region:");
@@ -167,9 +166,9 @@ public class OpenCSV {
                 String[] row1 = new String[]{region+","+country+","+itemType+","+salesChannel+","+orderPriority+","+orderDate+"," +
                                             orderID+","+shipDate+","+unitsSold+","+unitPrice+","+unitPrice+","+unitCost+","+
                                             totalRevenue+","+totalCost+","+totalProfit};
-                therows.add(row1);
+                therowsAdd.add(row1);
 
-                writer.writeAll(therows);
+                writer.writeAll(therowsAdd);
 
                 System.out.println("Do you want to add one more row? 'Yes/No'");
                 oneMore = scanner.nextLine();
@@ -196,6 +195,7 @@ public class OpenCSV {
             writer.writeAll(therows);
             writer.close();
 
+            System.out.println("Exporting file to: "+getFilepathExport()+filename);
 
 
     } catch (Exception e) {

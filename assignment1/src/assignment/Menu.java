@@ -7,7 +7,6 @@ import assignment.openCSV.OpenCSV_AvailableFiles;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
@@ -32,7 +31,7 @@ public class Menu {
 
          do{
 
-            System.out.print("Select one of the options by typing the corresponding number: " +
+            System.out.print("\nSelect one of the options by typing the corresponding number: " +
                     "\n1. Test if file exists and number of lines" +
                     "\n2. Get report for xxxx (total unit cost in Europe?)" +
                     "\n3. Get report for xxxx (total unit cost in Middle East?)" +
@@ -76,12 +75,30 @@ public class Menu {
                         System.out.println("Edit data in file");
                         break;
                     case 6:
-                        System.out.println("Export data to file");
-                        System.out.print("Enter filename (remember .csv): ");
-                        String filenameForExport = Ui.inputStringFromUser();
-                        openCSV.exportChosenDataToFile(filenameForExport);
-                        break;
-                    case 7:
+                            System.out.println(
+                                    "\n1. View current data set to be exported" +
+                                    "\n2. Export data to file" +
+                                    "\n3. Exit menu");
+                            int selectExportMenu = Ui.inputIntFromUser();
+
+                            if (selectExportMenu == 1) {
+                                System.out.println(openCSV.getTheRowsAsString());
+                                break;
+                            }
+                            if (selectExportMenu == 2) {
+                                System.out.println("Export data to file");
+                                System.out.print("Enter filename (remember .csv): ");
+                                String filenameForExport = Ui.inputStringFromUser();
+                                openCSV.exportChosenDataToFile(filenameForExport);
+                                break;
+                            }
+                            if (selectExportMenu == 3) {
+                                break;
+                            } else
+                                System.out.println("Invalid input.");
+
+
+                     case 7:
                         System.out.println("Read everything in file");
                         OpenCSV_AvailableFiles.printAvailableFiles(f);
                         OpenCSV.readEverythingWithOpenCSV(testOpenFile(openFile));
