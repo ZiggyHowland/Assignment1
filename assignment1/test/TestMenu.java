@@ -37,17 +37,17 @@ public class TestMenu<Bufferedwriter> {
     @Test
     public void exitMenu(){
 
-        when(mockUiFromScanner.inputIntFromUser()).thenReturn(11);
+        when(mockUiFromScanner.inputIntFromUser()).thenReturn(12);
         fixture.menu();
         verify(mockUiFromScanner, times(1)).inputIntFromUser();
     }
-
+/*
     @Test
     public void mainReport() {
         when(mockUiFromScanner.inputIntFromUser()).thenReturn(6).thenReturn(1);
         fixture.menu();
 
-    }
+    }*/
 
 
     /*

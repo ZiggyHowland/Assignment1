@@ -20,21 +20,23 @@ public class Reports {
 
 
     // Stub - TODO å gjøre ferdig
-    public static void salesPerRegion (StoreData storedata){
+    public static String salesPerRegion (StoreData storedata){
 
         int size = StoreData.sizeOfReport(storedata.objects);
         double totaltSalg = 0;
-        System.out.println("----------------------------------------------");
-        System.out.println("Salgsrapport per region");
-        System.out.println("----------------------------------------------");
-        System.out.println("Totalt antall salg e " + size);
+
         for (int i = 0; i < size; i ++) {
             totaltSalg = totaltSalg + storedata.getItem(i).getTotalProfit();
         }
-        System.out.printf("Brutto inntekt er kr.  %.2f" + ",-\n", totaltSalg);
-        //System.out.printf("Brutto inntekt er: %f54 \n", totaltSalg);
-        System.out.println("----------------------------------------------");
-        System.out.println(" ");
+        String salesPerRegion = String.format(
+                "----------------------------------------------" +
+                "\nSalgsrapport per region" +
+                "\n----------------------------------------------" +
+                "\nTotalt sales: %d"+
+                "\n\nBrutto inntekt er kr.  %.2f,-\n", size, totaltSalg);
+        System.out.println(salesPerRegion);
+        return salesPerRegion;
+
     }
 
     public static double sumTotalRevenue (StoreData sd){
