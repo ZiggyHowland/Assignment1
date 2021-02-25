@@ -7,7 +7,6 @@ import assignment.openCSV.OpenCSV_AvailableFiles;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
@@ -191,7 +190,7 @@ public class Menu {
             System.out.println("Please enter filename:");
             String fileName = Ui.inputStringFromUser();
             System.out.println("You entered: " + fileName);
-            openFile.openFile(fileName);
+            openFile.checkIfFileExistAndCountNumberOfLines(fileName);
             return fileName;
         } catch (IOException e) {
             throw new IOException();

@@ -1,6 +1,5 @@
 package assignment;
 
-import assignment.filesThatAreNotInUse.ReadClass;
 import fileConnection.FileConnection;
 
 import java.io.*;
@@ -28,24 +27,24 @@ public class OpenFile {
         return lines;
     }
 
-    public void read(String filename) {
+    public void readMethodsForReadClass_NoLongerInUse(String filename) {
         try {
-            ReadClass readClass = new ReadClass();
+            //ReadClass readClass = new ReadClass();
             //readClass.setFilnavn(filepath+"SalesRecords3.csv");
             //readClass.readEverything(filename);
             //readClass.printEverythingInObjects();
-            readClass.readOnlySpecificColumns();
+            //readClass.readOnlySpecificColumns();
         } catch (NullPointerException exception) {
             System.out.println("Not able to open file - wrong filename");
         }
     }
 
-    public void openFile(String filename) throws IOException {
+    public void checkIfFileExistAndCountNumberOfLines(String filename) throws IOException {
 
         try {
             BufferedReader file = FileConnection.readConnection(filepath + filename);
             System.out.println(filename + " file exists and is opened");
-            getFileInfo(filename);
+            getNumberOfLines(filename);
         } catch (NullPointerException exception) {
             throw new NullPointerException();
         } catch (FileNotFoundException exception) { //FileNotFoundException extends IOException
@@ -62,7 +61,7 @@ public class OpenFile {
         try {
             BufferedReader file = FileConnection.readConnection(filepathDelete + filename);
             System.out.println(filename + " file exists and is opened");
-            getFileInfo(filename);
+            getNumberOfLines(filename);
         } catch (NullPointerException exception) {
             throw new NullPointerException();
         } catch (FileNotFoundException exception) { //FileNotFoundException extends IOException
@@ -74,7 +73,7 @@ public class OpenFile {
         }
     }
 
-    public void getFileInfo(String filename) throws IOException {
+    public void getNumberOfLines(String filename) throws IOException {
         //try {
             //System.out.println("Please enter filename:");
             //String filnavn = scanner.nextLine();

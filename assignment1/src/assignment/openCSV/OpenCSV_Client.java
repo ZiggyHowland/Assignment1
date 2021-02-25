@@ -1,7 +1,6 @@
 package assignment.openCSV;
 
 import assignment.OpenFile;
-import assignment.openCSV.OpenCSV;
 
 import java.io.File;
 import java.io.IOException;
@@ -21,8 +20,8 @@ public class OpenCSV_Client {
 
                 System.out.println("\nWrite file you want to reach:");
                 String filename = scanner.nextLine();
-                openFile.openFile(filename);
-                openFile.getFileInfo(filename);
+                openFile.checkIfFileExistAndCountNumberOfLines(filename);
+                openFile.getNumberOfLines(filename);
 
                 System.out.println("What do you want to do next?");
                 System.out.println("1 - Read everything with OpenCSV\n2 - Write to file with OpenCSV");

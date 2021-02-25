@@ -17,11 +17,11 @@ public class OpenCSV_test {
             System.out.println(files[i]);
         }
 
-        System.out.println("\nWrite file you want to reach:");
+        /*System.out.println("\nWrite file you want to reach:");
         String filename = scanner.nextLine();
         openCSV.readEverythingWithOpenCSV(filename);
         openCSV.writeToFileWithStringsOpenCSV(filename);
-        openCSV.readEverythingWithOpenCSV(filename);
+        openCSV.readEverythingWithOpenCSV(filename); */
 
 
     }
