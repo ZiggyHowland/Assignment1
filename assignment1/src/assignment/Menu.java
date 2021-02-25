@@ -23,7 +23,7 @@ public class Menu {
     public void menu()  {
         OpenFile openFile = new OpenFile();
         StoreData storedata = new StoreData();
-        ReadClass readClass = new ReadClass();
+        //ReadClass readClass = new ReadClass();
         OpenCSV openCSV = new OpenCSV();
         final File f = new File("production/assignment1");
 
@@ -57,7 +57,7 @@ public class Menu {
                     case 2:
                         System.out.println("Get report for xxxx (total unit cost in Europe?)");
                         String filename = testOpenFile(openFile);
-                        readClass.readEverything(filename);
+                        //readClass.readEverything(filename);
                         int size = storedata.getObjectsSize();
                         System.out.println("Size: " + size);
                         //add/put valgte data rapporter i Array / hashmap el. - kan eksporteres senere
