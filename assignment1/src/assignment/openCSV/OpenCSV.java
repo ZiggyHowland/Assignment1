@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import static assignment.OpenFile.getFilepath;
+import static assignment.OpenFile.getFilepathExport;
 
 public class OpenCSV {
     Scanner scanner = new Scanner(System.in);
@@ -190,7 +191,7 @@ public class OpenCSV {
 
     public void exportChosenDataToFile(String filename){
         try{
-            CSVWriter writer = new CSVWriter(new FileWriter(getFilepath() + filename, true));
+            CSVWriter writer = new CSVWriter(new FileWriter(getFilepathExport() + filename, true));
 
             writer.writeAll(therows);
             writer.close();

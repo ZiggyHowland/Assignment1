@@ -17,6 +17,10 @@ public class OpenFile {
         return filepath;
     }
 
+    public static String getFilepathExport() {
+        return filepathExport;
+    }
+
     public long getLines() {
         return lines;
     }
