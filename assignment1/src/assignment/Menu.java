@@ -3,6 +3,7 @@ import assignment.dependencies.Ui;
 import assignment.dependencies.Ui_fromScanner;
 import assignment.openCSV.OpenCSV;
 import assignment.openCSV.OpenCSV_AvailableFiles;
+import assignment.openCSV.OpenCSV_changeData;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -20,13 +21,14 @@ public class Menu {
     }
 
     public void menu()  {
+        //ReadClass readClass = new ReadClass();
         OpenFile openFile = new OpenFile();
         StoreData storedata = new StoreData();
-        //ReadClass readClass = new ReadClass();
         OpenCSV openCSV = new OpenCSV();
         final File fFilePath = new File(OpenFile.getFilepath());
         final File fExport = new File(OpenFile.getFilepathExport());
         final File fDelete = new File(OpenFile.getFilePathDelete());
+        final File fEdit = new File(OpenFile.getFilePathEdit());
 
         boolean quit = false;
 
@@ -56,11 +58,11 @@ public class Menu {
                      case 1:
                          System.out.println("Test if file exists and number of lines");
                          OpenCSV_AvailableFiles.printAvailableFiles(fFilePath);
-                         testOpenFile(openFile);
+                         askForFileNameAndGiveFileStatusAndFileRows(openFile);
                          break;
                     case 2:
                         System.out.println("Get reports overall");
-                        String filename = testOpenFile(openFile);
+                        String filename = askForFileNameAndGiveFileStatusAndFileRows(openFile);
                         //readClass.readEverything(filename);
                         int size = storedata.getObjectsSize();
                         System.out.println("Size: " + size);
@@ -71,20 +73,29 @@ public class Menu {
                         String report = "TEST - link / method to actual report here";
                         //addThisReportToExportFile(openCSV, report);
                         OpenCSV_AvailableFiles.printAvailableFiles(fFilePath);
-                        storedata = OpenCSV.readAndSaveEverythingWithOpenCSV(testOpenFile(openFile));
+                        storedata = OpenCSV.readAndSaveEverythingWithOpenCSV(askForFileNameAndGiveFileStatusAndFileRows(openFile));
                         Reports.mainReport(storedata);
                         break;
                      case 4:
                         System.out.println("View reports per region and country");
                         String report2 = null;
                         OpenCSV_AvailableFiles.printAvailableFiles(fFilePath);
-                        storedata = OpenCSV.readAndSaveEverythingWithOpenCSV(testOpenFile(openFile));
+                        storedata = OpenCSV.readAndSaveEverythingWithOpenCSV(askForFileNameAndGiveFileStatusAndFileRows(openFile));
                         Reports.salesPerRegion(storedata);
                         //addThisReportToExportFile(openCSV, report2);
                         break;
                     case 5:
                         System.out.println("Edit data in file");
-                        OpenCSV_AvailableFiles.printAvailableFiles(fFilePath);
+                        OpenCSV_AvailableFiles.printAvailableFiles(fEdit);
+                        System.out.println("Filename:");
+                        String fileNameToEdit = scanner.nextLine();
+                        System.out.println("New value:");
+                        String newValue = scanner.nextLine();
+                        System.out.println("Row to replace:");
+                        int rowToEdit = scanner.nextInt()-1; scanner.nextLine();
+                        System.out.println("Column to replace:");
+                        int columnToEdit = scanner.nextInt()-1; scanner.nextLine();
+                        OpenCSV_changeData.editDataWithOpenCSV(fileNameToEdit, newValue, rowToEdit, columnToEdit);
                         break;
                     case 6:
                         System.out.println(
@@ -107,22 +118,22 @@ public class Menu {
                     case 7:
                         System.out.println("Read everything in file");
                         OpenCSV_AvailableFiles.printAvailableFiles(fFilePath);
-                        OpenCSV.readEverythingWithOpenCSV(testOpenFile(openFile));
+                        OpenCSV.readEverythingWithOpenCSV(askForFileNameAndGiveFileStatusAndFileRows(openFile));
                          break;
                     case 8:
                         System.out.println("Read only specific line in file");
                         OpenCSV_AvailableFiles.printAvailableFiles(fFilePath);
-                        OpenCSV.readOnlySpecificLines(testOpenFile(openFile), getRow());
+                        OpenCSV.readOnlySpecificLines(askForFileNameAndGiveFileStatusAndFileRows(openFile), getRow());
                         break;
                     case 9:
                         System.out.println("Write to file");
                         OpenCSV_AvailableFiles.printAvailableFiles(fFilePath);
-                        openCSV.writeToFileWithStringsOpenCSV(testOpenFile(openFile));
+                        openCSV.writeToFileWithStringsOpenCSV(askForFileNameAndGiveFileStatusAndFileRows(openFile));
                         break;
                      case 10:
                         System.out.println("Save everything from file");
                         OpenCSV_AvailableFiles.printAvailableFiles(fFilePath);
-                        storedata = OpenCSV.readAndSaveEverythingWithOpenCSV(testOpenFile(openFile));
+                        storedata = OpenCSV.readAndSaveEverythingWithOpenCSV(askForFileNameAndGiveFileStatusAndFileRows(openFile));
                         System.out.println(storedata.getObjectsSize());
                         System.out.printf("Omsetning %f5", Reports.sumTotalRevenue(storedata));
                         break;
@@ -183,7 +194,7 @@ public class Menu {
     }
 
 
-    private String testOpenFile(OpenFile openFile) throws IOException {
+    private String askForFileNameAndGiveFileStatusAndFileRows(OpenFile openFile) throws IOException {
         try {
             System.out.println("Open file selected");
             //"filnavn: " --> til metode i annen klasse. Prøve å åpne fil. Sette opp exceptions  +lese data

@@ -16,12 +16,14 @@ public class OpenFile {
     private static final String filepath = "assignment1/production/assignment1/";
     private static final String filepathExport = "assignment1/production/export/";
     private static final String filepathDelete = "assignment1/production/delete/";
+    private static final String filepathEdit = "assignment1/production/edit/";
 
     public static String getFilepath() {
         return filepath;
     }
     public static String getFilepathExport() {return filepathExport;}
     public static String getFilePathDelete() {return filepathDelete;}
+    public static String getFilePathEdit() {return filepathEdit;}
 
     public long getLines() {
         return lines;
