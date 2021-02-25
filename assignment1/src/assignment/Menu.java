@@ -70,14 +70,14 @@ public class Menu {
                         System.out.println("View reports overall");
                         String report = "TEST - link / method to actual report here";
                         //addThisReportToExportFile(openCSV, report);
-                        OpenCSV_AvailableFiles.printAvailableFiles(f);
+                        OpenCSV_AvailableFiles.printAvailableFiles(fFilePath);
                         storedata = OpenCSV.readAndSaveEverythingWithOpenCSV(testOpenFile(openFile));
                         Reports.mainReport(storedata);
                         break;
                      case 4:
                         System.out.println("View reports per region and country");
                         String report2 = null;
-                        OpenCSV_AvailableFiles.printAvailableFiles(f);
+                        OpenCSV_AvailableFiles.printAvailableFiles(fFilePath);
                         storedata = OpenCSV.readAndSaveEverythingWithOpenCSV(testOpenFile(openFile));
                         Reports.salesPerRegion(storedata);
                         //addThisReportToExportFile(openCSV, report2);
