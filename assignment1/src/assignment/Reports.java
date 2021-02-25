@@ -13,7 +13,25 @@ public class Reports {
         for (int i = 0; i < size; i ++) {
             totaltSalg = totaltSalg + storedata.getItem(i).getTotalProfit();
         }
-        System.out.println("Brutto inntekt er: " + totaltSalg);
+        System.out.printf("Brutto inntekt er kr.  " + totaltSalg +",-\n");
+        System.out.println("----------------------------------------------");
+        System.out.println(" ");
+    }
+
+
+    // Stub - TODO å gjøre ferdig
+    public static void salesPerRegion (StoreData storedata){
+
+        int size = StoreData.sizeOfReport(storedata.objects);
+        double totaltSalg = 0;
+        System.out.println("----------------------------------------------");
+        System.out.println("Salgsrapport per region");
+        System.out.println("----------------------------------------------");
+        System.out.println("Totalt antall salg e " + size);
+        for (int i = 0; i < size; i ++) {
+            totaltSalg = totaltSalg + storedata.getItem(i).getTotalProfit();
+        }
+        System.out.printf("Brutto inntekt er: %f54 \n", totaltSalg);
         System.out.println("----------------------------------------------");
         System.out.println(" ");
     }
