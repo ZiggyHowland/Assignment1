@@ -71,6 +71,13 @@ public class Menu {
                         break;
                     case 6:
                         System.out.println("Export data to file");
+                        System.out.println(" TEST Enter string to add it to file: ");
+                        String testData = Ui.inputStringFromUser();
+                        openCSV.addStringToExport(testData);
+
+                        System.out.println(" TEST Enter filename ");
+                        String filename4 = Ui.inputStringFromUser();
+                        openCSV.exportChosenDataToFile(filename4);
                          break;
                     case 7:
                         System.out.println("Read everything in file");
