@@ -6,13 +6,14 @@ import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 import fileConnection.FileConnection;
+import assignment.StoreData.*;
 
 public class ReadClass {
     //ArrayList<Object> objects = new ArrayList<>();
     private String filnavn;
-    StoreData storedata = new StoreData();
+    //StoreData storedata = new StoreData();
 
-    public void readEverything(String filename) {
+    public static void readEverything(String filename, StoreData storedata) {
         //objects.clear();
         try {
             BufferedReader file = FileConnection.readConnection(OpenFile.getFilepath()+filename);
