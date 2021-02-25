@@ -22,7 +22,7 @@ public class StoreData {
         return objects.get(index);
     }
 
-    public int sizeOfReport (){
+    public static int sizeOfReport(ArrayList<Object> objects){
         return objects.size();
     }
 }

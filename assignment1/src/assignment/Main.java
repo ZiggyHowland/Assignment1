@@ -1,7 +1,5 @@
 package assignment;
 
-import assignment.dependencies.Ui_fromScanner;
-
 public class Main {
 
 
@@ -22,11 +20,13 @@ public class Main {
         storedata.addObject(item2);
 
 
-        int size = storedata.sizeOfReport();
+        int size = StoreData.sizeOfReport(storedata.objects);
         System.out.println("size is " + size);
+        System.out.println("size is " + Reports.sumTotalRevenue(storedata));
 
-        Menu instanciateMenu = new Menu(new Ui_fromScanner());
-        instanciateMenu.menu(storedata);
+
+        //Menu instanciateMenu = new Menu(new Ui_fromScanner());
+        //instanciateMenu.menu();
     }
 
 }
