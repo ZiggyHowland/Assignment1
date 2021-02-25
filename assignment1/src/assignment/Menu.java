@@ -72,15 +72,15 @@ public class Menu {
                         System.out.println("View reports overall");
                         String report = "TEST - link / method to actual report here";
                         //addThisReportToExportFile(openCSV, report);
-                        OpenCSV_AvailableFiles.printAvailableFiles(fFilePath);
-                        storedata = OpenCSV.readAndSaveEverythingWithOpenCSV(askForFileNameAndGiveFileStatusAndFileRows(openFile));
+//                        OpenCSV_AvailableFiles.printAvailableFiles(fFilePath);
+//                        storedata = OpenCSV.readAndSaveEverythingWithOpenCSV(askForFileNameAndGiveFileStatusAndFileRows(openFile));
                         Reports.mainReport(storedata);
                         break;
                      case 4:
                         System.out.println("View reports per region and country");
                         String report2 = null;
-                        OpenCSV_AvailableFiles.printAvailableFiles(fFilePath);
-                        storedata = OpenCSV.readAndSaveEverythingWithOpenCSV(askForFileNameAndGiveFileStatusAndFileRows(openFile));
+//                        OpenCSV_AvailableFiles.printAvailableFiles(fFilePath);
+//                        storedata = OpenCSV.readAndSaveEverythingWithOpenCSV(askForFileNameAndGiveFileStatusAndFileRows(openFile));
                         Reports.salesPerRegion(storedata);
                         //addThisReportToExportFile(openCSV, report2);
                         break;
@@ -134,8 +134,8 @@ public class Menu {
                         System.out.println("Save everything from file");
                         OpenCSV_AvailableFiles.printAvailableFiles(fFilePath);
                         storedata = OpenCSV.readAndSaveEverythingWithOpenCSV(askForFileNameAndGiveFileStatusAndFileRows(openFile));
-                        System.out.println(storedata.getObjectsSize());
-                        System.out.printf("Omsetning %f5", Reports.sumTotalRevenue(storedata));
+//                        System.out.println(storedata.getObjectsSize());
+//                        System.out.printf("Omsetning %f5", Reports.sumTotalRevenue(storedata));
                         break;
                     case 11:
                         System.out.println("Delete file\n");
