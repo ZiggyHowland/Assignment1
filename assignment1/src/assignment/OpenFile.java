@@ -11,6 +11,7 @@ public class OpenFile {
     ReadClass readClass = new ReadClass();
     long lines = 0;
     private static final String filepath = "production/assignment1/";
+    private static final String f = "production/assignment1";
     private static final String filepathExport = "production/export/";
     private static final String filepathDelete = "production/delete/";
 
