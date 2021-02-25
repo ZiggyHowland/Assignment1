@@ -1,5 +1,8 @@
 package assignment.openCSV;
 
+import assignment.Object;
+import assignment.StoreData;
+import assignment.OpenFile;
 import com.opencsv.CSVParser;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
@@ -17,6 +20,7 @@ import static assignment.OpenFile.getFilepath;
 
 public class OpenCSV {
     Scanner scanner = new Scanner(System.in);
+    List<String[]> therows = new ArrayList<>();
     //private final String filepath = "production/assignment1/";
 
     public static void readEverythingWithOpenCSV(String filename) {
@@ -28,6 +32,83 @@ public class OpenCSV {
                 if (nextline != null) {
                     System.out.println(Arrays.toString(nextline));
                 }
+            }
+            System.out.println("CSV Read complete\n");
+        } catch (FileNotFoundException e) {
+            System.out.println("File doesn't exist");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    public static StoreData readAndSaveEverythingWithOpenCSV(String filename) throws Exception {
+        try {
+            CSVReader reader = new CSVReader(new FileReader(getFilepath()+filename));
+            String[] nextline;
+            StoreData storedata = new StoreData();
+            while ((nextline = reader.readNext()) != null) {
+                //System.out.println();
+                if (nextline != null) {
+                    String region = nextline[0];
+                    //System.out.println("Region: " + region);
+                    String country = nextline[1];
+                    //System.out.println("Country: " + country);
+                    String itemType = nextline[2];
+                    //System.out.println("Item type: " + itemType);
+                    String salesChannel = nextline[3];
+                    //System.out.println("Sales channel " + salesChannel);
+                    String orderPriority = nextline[4];
+                    //System.out.println("Order priority: " + orderPriority);
+                    String orderDate = nextline[5];
+                    //System.out.println("Orderdate: " + orderDate);
+                    String orderId = nextline[6];
+                    //System.out.println("Order ID: " + orderId);
+                    String shipDate = nextline[7];
+                    //System.out.println("Ship date: " + shipDate);
+                    int unitsSold = Integer.parseInt(nextline[8]);
+                    //System.out.println("Units sold: " + unitsSold);
+                    double unitPrice = Double.parseDouble(nextline[9]);
+                    //System.out.println("Unit Price: " + unitPrice);
+                    double unitCost = Double.parseDouble(nextline[10]);
+                    //System.out.println("Unit cost: " + unitCost);
+                    double totalRevenue = Double.parseDouble(nextline[11]);
+                    //System.out.println("Total revenue: " + totalRevenue);
+                    double totalCost = Double.parseDouble(nextline[12]);
+                    //System.out.println("Total cost: " + totalCost);
+                    double totalProfit = Double.parseDouble(nextline[13]);
+                    //System.out.println("Total profit: " + totalProfit);
+
+
+                    storedata.addObject(new Object(region, country, itemType, salesChannel, orderPriority,
+                            orderDate, orderId, shipDate, unitsSold, unitPrice, unitCost,
+                            totalRevenue, totalCost, totalProfit));
+                    //System.out.println(Arrays.toString(nextline)); //Vil du at den kun skal legge inn i ArrayList, eller også printe ut?
+                }
+            }
+            System.out.println("CSV Read complete\n");
+            reader.close();
+            return storedata;
+        } catch (ArrayIndexOutOfBoundsException e) {
+            throw new ArrayIndexOutOfBoundsException(); //Ulik antall kolonner i radene, og kan derfor ikke opprette Object objekt
+        } catch (NumberFormatException e) {
+            throw new NumberFormatException(); //Feil i format
+        } catch (Exception e) {
+            throw new Exception();
+        }
+    }
+
+    public static void readOnlySpecificLines(String filename,int row) {
+        try {
+
+            int count = 0;
+            CSVReader reader = new CSVReader(new FileReader(getFilepath()+filename));
+            String[] nextline;
+            while ((nextline = reader.readNext()) != null) {
+                //System.out.println();
+                if (nextline != null && row==count) {
+                    System.out.println(Arrays.toString(nextline));
+                }
+                count++;
             }
             System.out.println("CSV Read complete\n");
         } catch (FileNotFoundException e) {
@@ -94,6 +175,26 @@ public class OpenCSV {
         } catch (Exception e) {
             System.out.println(e);
         }
+    }
+
+    public void addStringToExport(String stringToExportFile) {
+            String[] row1 = new String[]{stringToExportFile};
+            therows.add(row1);
+    }
+
+    public void exportChosenDataToFile(String filename){
+        try{
+            CSVWriter writer = new CSVWriter(new FileWriter(getFilepath() + filename, true));
+
+            writer.writeAll(therows);
+            writer.close();
+
+
+
+
+    } catch (Exception e) {
+        System.out.println(e);
+    }
     }
 
 
