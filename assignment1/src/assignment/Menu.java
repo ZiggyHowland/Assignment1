@@ -1,6 +1,7 @@
 package assignment;
 import assignment.dependencies.Ui;
 import assignment.dependencies.Ui_fromScanner;
+import assignment.Reports.*;
 
 import java.util.InputMismatchException;
 
@@ -35,10 +36,12 @@ public class Menu {
                     String fileName = Ui.inputStringFromUser();
                     System.out.println("You entered: "+fileName);
                     openFile.openFile(fileName);
+                    //ReadClass.readEverything(fileName, storedata);
                     break;
                 case 2:
                     System.out.println("Get reports");
                     System.out.println("size is " + storedata.sizeOfReport());
+                    Reports.RunReports(storedata);
                     break;
                 case 3:
                     System.out.println("Edit data selected");
