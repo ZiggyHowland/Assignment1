@@ -1,0 +1,17 @@
+
+j
+java:S2095"HUse try-with-resources or close this "FileReader" in a "finally" clause.(¡ëÔÛûÿÿÿÿ8ŠÏé¤ı.
+{
+java:S1488"^Immediately return this expression instead of assigning it to the temporary variable "writer".(á¡¬8ŠÏé¤ı.
+W
+java:S1118":Add a private constructor to hide the implicit public one.(òĞØ…8ŠÏé¤ı.
+{
+java:S1488"^Immediately return this expression instead of assigning it to the temporary variable "reader".(ÀÇïÉ8ŠÏé¤ı.
+e
+java:S2095	"HUse try-with-resources or close this "FileWriter" in a "finally" clause.(´ŠœÙ8ŠÏé¤ı.
+i
+java:S2095
+"LUse try-with-resources or close this "BufferedWriter" in a "finally" clause.(§–á¸8ŠÏé¤ı.
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ìæº¤şÿÿÿÿ
+„
+java:S4970"bRemove or refactor this catch clause because it is unreachable as hidden by previous catch blocks.(şçô’ûÿÿÿÿ8ŠÏé¤ı.

@@ -1,0 +1,29 @@
+
+V	java:S125"<This block of commented-out lines of code should be removed.(ú»¢½úÿÿÿÿ
+l
+java:S1128"QRemove this unnecessary import: java.lang classes are always implicitly imported.(ãø©Æşÿÿÿÿ
+@
+java:S1068	"*Remove this unused "region" private field.(×…¼á
+G
+java:S1068",Remove this unused "itemType" private field.(şÈÂÿüÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÚÁ¿™ûÿÿÿÿ
+\	java:S107"BConstructor has 14 parameters, which is greater than 7 authorized.(ÃÀ”Õÿÿÿÿÿ
+C
+java:S1068"-Remove this unused "orderDate" private field.(õÅÕ®
+L
+java:S1068"1Remove this unused "orderPriority" private field.(â˜£Óùÿÿÿÿ
+K
+java:S1068"0Remove this unused "salesChannel" private field.(Õó¬øşÿÿÿÿ
+G
+java:S1135"2Complete the task associated to this TODO comment.(ˆ‰…W
+F
+java:S1068
+"+Remove this unused "country" private field.(“—àÊúÿÿÿÿ
+B
+java:S1068",Remove this unused "shipDate" private field.(Â·ÉÁ
+M
+java:S1135"2Complete the task associated to this TODO comment.(û¦Îâüÿÿÿÿ
+A
+java:S1128"+Remove this unused import 'java.util.Date'.(¸…¼ü
+A
+java:S1068"+Remove this unused "orderID" private field.(×¤Åä

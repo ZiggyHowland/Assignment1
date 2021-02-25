@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="commons-lang3-3.11-javadoc">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/assignment1/library/commons-lang3-3.11-tests.jar!/" />
+      <root url="jar://$PROJECT_DIR$/assignment1/library/commons-lang3-3.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/assignment1/library/opencsv-5.3.jar!/" />
+      <root url="file://$PROJECT_DIR$" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/assignment1/library/commons-lang3-3.11-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/assignment1/library/commons-lang3-3.11-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/assignment1/library/commons-lang3-3.11-test-sources.jar!/" />
+      <root url="file://$PROJECT_DIR$/assignment1/src" />
+    </SOURCES>
+  </library>
+</component>

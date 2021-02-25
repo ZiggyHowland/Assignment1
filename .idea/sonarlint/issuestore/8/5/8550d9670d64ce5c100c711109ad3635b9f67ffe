@@ -1,0 +1,67 @@
+
+R
+java:S1128"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ8½üœ¢ı.
+]
+java:S1854W"@Remove this useless assignment to local variable "salesChannel".(ĞºŸ€8½üœ¢ı.
+K
+java:S1481Y".Remove this unused "orderDate" local variable.(î¸¤8½üœ¢ı.
+O
+java:S1481V"-Remove this unused "itemType" local variable.(¡Ş³ğøÿÿÿÿ8½üœ¢ı.
+]	java:S125&"<This block of commented-out lines of code should be removed.(Å®Ææùÿÿÿÿ8½üœ¢ı.
+N
+java:S1481U",Remove this unused "country" local variable.(©—Şøÿÿÿÿ8½üœ¢ı.
+a
+java:S1854a"?Remove this useless assignment to local variable "totalProfit".(¤÷àÉúÿÿÿÿ8½üœ¢ı.
+_
+java:S1854\"=Remove this useless assignment to local variable "unitsSold".(á™‹øÿÿÿÿ8½üœ¢ı.
+^
+java:S1854V"<Remove this useless assignment to local variable "itemType".(¡Ş³ğøÿÿÿÿ8½üœ¢ı.
+T
+java:S1481X"2Remove this unused "orderPriority" local variable.(ŠÁÄ­şÿÿÿÿ8½üœ¢ı.
+_
+java:S1854`"=Remove this useless assignment to local variable "totalCost".(Ä­’ÿÿÿÿÿ8½üœ¢ı.
+]
+java:S1854_"@Remove this useless assignment to local variable "totalRevenue".(±Ù à8½üœ¢ı.
+c
+java:S1854X"ARemove this useless assignment to local variable "orderPriority".(ŠÁÄ­şÿÿÿÿ8½üœ¢ı.
+]
+java:S1854U";Remove this useless assignment to local variable "country".(©—Şøÿÿÿÿ8½üœ¢ı.
+I
+java:S1481Z",Remove this unused "orderID" local variable.(éÉÍÃ8½üœ¢ı.
+X	java:S125"<This block of commented-out lines of code should be removed.(ùŞÍ½8½üœ¢ı.
+R
+java:S1481a"0Remove this unused "totalProfit" local variable.(¤÷àÉúÿÿÿÿ8½üœ¢ı.
+P
+java:S1481]".Remove this unused "unitPrice" local variable.(äÜèœûÿÿÿÿ8½üœ¢ı.
+N
+java:S1481_"1Remove this unused "totalRevenue" local variable.(±Ù à8½üœ¢ı.
+P
+java:S1481\".Remove this unused "unitsSold" local variable.(á™‹øÿÿÿÿ8½üœ¢ı.
+Z	java:S106J"9Replace this use of System.out or System.err by a logger.(¡ıİùÿÿÿÿ8½üœ¢ı.
+Z
+java:S1854Y"=Remove this useless assignment to local variable "orderDate".(î¸¤8½üœ¢ı.
+T
+java:S11358"2Complete the task associated to this TODO comment.(ñ•Ôøÿÿÿÿ8½üœ¢ı.
+]	java:S125"<This block of commented-out lines of code should be removed.(ÿ©¿éÿÿÿÿÿ8ééã¤ı.
+]	java:S1251"<This block of commented-out lines of code should be removed.(Ä»øšüÿÿÿÿ8½üœ¢ı.
+_
+java:S1854]"=Remove this useless assignment to local variable "unitPrice".(äÜèœûÿÿÿÿ8½üœ¢ı.
+N
+java:S1481W"1Remove this unused "salesChannel" local variable.(ĞºŸ€8½üœ¢ı.
+]	java:S125*"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8½üœ¢ı.
+^
+java:S1854["<Remove this useless assignment to local variable "shipDate".(‚şìîùÿÿÿÿ8½üœ¢ı.
+X
+java:S1854Z";Remove this useless assignment to local variable "orderID".(éÉÍÃ8½üœ¢ı.
+O
+java:S1481["-Remove this unused "shipDate" local variable.(‚şìîùÿÿÿÿ8½üœ¢ı.
+X	java:S125f"<This block of commented-out lines of code should be removed.(‰ûûä8½üœ¢ı.
+H
+java:S1481T"+Remove this unused "region" local variable.(ù¸â8½üœ¢ı.
+X	java:S125<"<This block of commented-out lines of code should be removed.(ùŞÍ½8½üœ¢ı.
+P
+java:S1481`".Remove this unused "totalCost" local variable.(Ä­’ÿÿÿÿÿ8½üœ¢ı.
+W
+java:S1854T":Remove this useless assignment to local variable "region".(ù¸â8½üœ¢ı.
+Z	java:S106M"9Replace this use of System.out or System.err by a logger.(¨¶ÑÍşÿÿÿÿ8½üœ¢ı.
+Z	java:S1063"9Replace this use of System.out or System.err by a logger.(¨¶ÑÍşÿÿÿÿ8½üœ¢ı.

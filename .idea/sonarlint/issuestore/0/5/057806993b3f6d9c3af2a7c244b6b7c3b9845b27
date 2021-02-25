@@ -1,0 +1,24 @@
+
+U	java:S106B"9Replace this use of System.out or System.err by a logger.(Ø¬ç8Ğó£ı.
+Z
+java:S1854%"8Remove this useless assignment to local variable "file".(±¼¢¦üÿÿÿÿ8Òşúùü.
+U	java:S106/"9Replace this use of System.out or System.err by a logger.(ıìç8„îÊıü.
+_
+java:S1117"=Rename "readClass" which hides the field declared at line 10.(ÒñÌ‰üÿÿÿÿ8¯à¥£ı.
+U	java:S106)"9Replace this use of System.out or System.err by a logger.(Ÿîà›8Òşúùü.
+W	java:S125"<This block of commented-out lines of code should be removed.(¼´—+8¯à¥£ı.
+]	java:S1257"<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ8Òşúùü.
+i
+java:S2677>"LUse or store the value returned from "readLine" instead of throwing it away.(ÆÒµ±8Ğó£ı.
+U	java:S106+"9Replace this use of System.out or System.err by a logger.(¸†–¶8„îÊıü.
+]	java:S125"<This block of commented-out lines of code should be removed.(¥ëëµıÿÿÿÿ8¯à¥£ı.
+V
+java:S1117;"9Rename "lines" which hides the field declared at line 11.(Ç®‚8ü¡Ä©ı.
+K
+java:S1481:")Remove this unused "file" local variable.(±¼¢¦üÿÿÿÿ8Òşúùü.
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(·üåÕşÿÿÿÿ8¯à¥£ı.
+Z	java:S106&"9Replace this use of System.out or System.err by a logger.(æş×÷ûÿÿÿÿ8Òşúùü.
+Z	java:S1061"9Replace this use of System.out or System.err by a logger.(¨¶ÑÍşÿÿÿÿ8™ğœ¢ı.
+v	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ç¬°ü8¯à¥£ı.
+K
+java:S1481%")Remove this unused "file" local variable.(±¼¢¦üÿÿÿÿ8¯à¥£ı.

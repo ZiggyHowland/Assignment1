@@ -1,0 +1,30 @@
+
+Z	java:S106]"9Replace this use of System.out or System.err by a logger.(ËŠ”´ÿÿÿÿÿ8·‚‹©ı.
+U	java:S106`"9Replace this use of System.out or System.err by a logger.(Íè®³8·‚‹©ı.
+Z	java:S106d"9Replace this use of System.out or System.err by a logger.(áÆÛÀÿÿÿÿÿ8·‚‹©ı.
+U	java:S106b"9Replace this use of System.out or System.err by a logger.(¬ÁÁæ8·‚‹©ı.
+U	java:S106p"9Replace this use of System.out or System.err by a logger.(¬§òÎ8·‚‹©ı.
+U	java:S106f"9Replace this use of System.out or System.err by a logger.(Ü¹Ó–8·‚‹©ı.
+Z	java:S106r"9Replace this use of System.out or System.err by a logger.(¹¨‡ğüÿÿÿÿ8·‚‹©ı.
+Z	java:S106t"9Replace this use of System.out or System.err by a logger.(â•½ûÿÿÿÿ8·‚‹©ı.
+R
+java:S1128	"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ8ÈäÆ©ı.
+\
+java:S1128":Remove this unused import 'java.io.FileNotFoundException'.(·î™ùÿÿÿÿ8ÈäÆ©ı.
+n	java:S116"MRename this field "Ui" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğàÔ„ÿÿÿÿÿ8ÈäÆ©ı.
+]
+java:S1854";Remove this useless assignment to local variable "scanner".(ù ƒ‘üÿÿÿÿ8ÈäÆ©ı.
+Z	java:S106""9Replace this use of System.out or System.err by a logger.(¤ô¤úÿÿÿÿ8ÈäÆ©ı.
+U	java:S1064"9Replace this use of System.out or System.err by a logger.(Åó¦»8ÈäÆ©ı.
+U	java:S1068"9Replace this use of System.out or System.err by a logger.(ê ïü8ÈäÆ©ı.
+U	java:S106<"9Replace this use of System.out or System.err by a logger.( Ë¹Ì8ÈäÆ©ı.
+T	java:S106@"9Replace this use of System.out or System.err by a logger.(éóá`8ÈäÆ©ı.
+Z	java:S106C"9Replace this use of System.out or System.err by a logger.(™¥ï©øÿÿÿÿ8ÈäÆ©ı.
+Z	java:S106F"9Replace this use of System.out or System.err by a logger.(üĞø¦úÿÿÿÿ8ÈäÆ©ı.
+Z	java:S106I"9Replace this use of System.out or System.err by a logger.(Û‚Ëûÿÿÿÿ8ÈäÆ©ı.
+Z	java:S106L"9Replace this use of System.out or System.err by a logger.(ÑÁ®¨ÿÿÿÿÿ8ÈäÆ©ı.
+U	java:S106Q"9Replace this use of System.out or System.err by a logger.(Áô8ÈäÆ©ı.
+Z	java:S106T"9Replace this use of System.out or System.err by a logger.(Ş½Õ­ûÿÿÿÿ8ÈäÆ©ı.
+U	java:S106Y"9Replace this use of System.out or System.err by a logger.(¯‰ü8ÈäÆ©ı.
+N
+java:S1481",Remove this unused "scanner" local variable.(ù ƒ‘üÿÿÿÿ8ÈäÆ©ı.

@@ -1,0 +1,44 @@
+
+U	java:S106J"9Replace this use of System.out or System.err by a logger.(†‰×Û8Ñ¢¦§ý.
+]	java:S125M"<This block of commented-out lines of code should be removed.(‹ª»Àüÿÿÿÿ8Ñ¢¦§ý.
+Z	java:S106 "9Replace this use of System.out or System.err by a logger.(—“ç ÿÿÿÿÿ8•£Ä©ý.
+F
+java:S1128")Remove this unused import 'java.io.File'.(†Ð¥Å8„ß¿£ý.
+>
+java:S1116I"Remove this empty statement.(È˜ö˜ùÿÿÿÿ8Ñ¢¦§ý.
+Z	java:S106_"9Replace this use of System.out or System.err by a logger.(¨¶ÑÍþÿÿÿÿ8Ñ¢¦§ý.
+]	java:S125d"<This block of commented-out lines of code should be removed.(¹º”ýùÿÿÿÿ8Ñ¢¦§ý.
+Z	java:S106<"9Replace this use of System.out or System.err by a logger.(°ßúíþÿÿÿÿ8Ñ¢¦§ý.
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(ÁÓñùüÿÿÿÿ8•£Ä©ý.
+>
+java:S1116E"Remove this empty statement.(½Å¡àýÿÿÿÿ8Ñ¢¦§ý.
+>
+java:S1116K"Remove this empty statement.(ÞÈæÂþÿÿÿÿ8Ñ¢¦§ý.
+Z	java:S106$"9Replace this use of System.out or System.err by a logger.(¨¶ÑÍþÿÿÿÿ8ËÎ®¤ý.
+U	java:S1068"9Replace this use of System.out or System.err by a logger.(’²é8Ñ¢¦§ý.
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(öÍ¥Ùÿÿÿÿÿ
+T	java:S106@"9Replace this use of System.out or System.err by a logger.(ãþÑ8Ñ¢¦§ý.
+Z	java:S106D"9Replace this use of System.out or System.err by a logger.(¥ÛÀãûÿÿÿÿ8Ñ¢¦§ý.
+U	java:S106>"9Replace this use of System.out or System.err by a logger.(Ž–ƒæ8Ñ¢¦§ý.
+]	java:S125"<This block of commented-out lines of code should be removed.(´û—Ýùÿÿÿÿ8ËÎ®¤ý.
+Z	java:S1060"9Replace this use of System.out or System.err by a logger.(¢ðÈœÿÿÿÿÿ8Ñ¢¦§ý.
+Z	java:S106B"9Replace this use of System.out or System.err by a logger.(¶þÉöûÿÿÿÿ8Ñ¢¦§ý.
+Z	java:S1062"9Replace this use of System.out or System.err by a logger.(ÏÀ¥¨ÿÿÿÿÿ8Ñ¢¦§ý.
+d
+java:S2095,"GUse try-with-resources or close this "CSVWriter" in a "finally" clause.(©ºí‹8Ñ¢¦§ý.
+U	java:S106]"9Replace this use of System.out or System.err by a logger.(¸†–¶8Ñ¢¦§ý.
+Z	java:S1066"9Replace this use of System.out or System.err by a logger.(ú¯ßžùÿÿÿÿ8Ñ¢¦§ý.
+Z	java:S106F"9Replace this use of System.out or System.err by a logger.(ªµô›úÿÿÿÿ8Ñ¢¦§ý.
+U	java:S106V"9Replace this use of System.out or System.err by a logger.(‡ûàñ8Ñ¢¦§ý.
+Z	java:S106H"9Replace this use of System.out or System.err by a logger.(‰÷¨ìþÿÿÿÿ8Ñ¢¦§ý.
+U	java:S106""9Replace this use of System.out or System.err by a logger.(¸†–¶8ËÎ®¤ý.
+i
+java:S2095"GUse try-with-resources or close this "CSVReader" in a "finally" clause.(ãì×Œûÿÿÿÿ8•£Ä©ý.
+U	java:S1064"9Replace this use of System.out or System.err by a logger.(‰ýÞæ8Ñ¢¦§ý.
+T
+java:S2589"7Remove this expression which always evaluates to "true"(••öé8•£Ä©ý.
+Z	java:S106:"9Replace this use of System.out or System.err by a logger.(öÂ„øùÿÿÿÿ8Ñ¢¦§ý.
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(ªÓ¼áþÿÿÿÿ8•£Ä©ý.
+>
+java:S1116G"Remove this empty statement.(ØÂÖÊýÿÿÿÿ8Ñ¢¦§ý.
+]	java:S125/"<This block of commented-out lines of code should be removed.(ÿÐáŠúÿÿÿÿ8Ñ¢¦§ý.
