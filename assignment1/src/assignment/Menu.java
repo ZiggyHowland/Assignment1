@@ -81,6 +81,8 @@ public class Menu {
                          break;
                     case 8:
                         System.out.println("Read only specific line in file");
+                        OpenCSV_AvailableFiles.printAvailableFiles(f);
+                        OpenCSV.readOnlySpecificLines(testOpenFile(openFile), getRow());
                         break;
                     case 9:
                         System.out.println("Write to file");
@@ -132,10 +134,10 @@ public class Menu {
     }
 
     public int getRow() {
-        System.out.println("Please enter row you want to read:");
+        System.out.println("\nPlease enter row you want to read:");
         int row = scanner.nextInt();
         scanner.nextLine();
-        return row;
+        return row-1;
     }
 
 }
