@@ -45,7 +45,7 @@ public class Menu {
                     "\n11. Exit menu" +
                     "\n\nEnter number: ");
 
-            
+
              try{
                  int menuSelect = Ui.inputIntFromUser();
 
