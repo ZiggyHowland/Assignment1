@@ -164,7 +164,7 @@ public class OpenCSV {
                 //String[] header = new String[]{"Region", "Name", "OrderId", "Cost"};
                 //therows.add(header);
                 String[] row1 = new String[]{region+","+country+","+itemType+","+salesChannel+","+orderPriority+","+orderDate+"," +
-                                            orderID+","+shipDate+","+unitsSold+","+unitPrice+","+unitPrice+","+unitCost+","+
+                                            orderID+","+shipDate+","+unitsSold+","+unitPrice+","+unitCost+","+
                                             totalRevenue+","+totalCost+","+totalProfit};
                 therowsAdd.add(row1);
 
