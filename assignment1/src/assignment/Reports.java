@@ -13,7 +13,7 @@ public class Reports {
         for (int i = 0; i < size; i ++) {
             totaltSalg = totaltSalg + storedata.getItem(i).getTotalProfit();
         }
-        System.out.printf("Brutto inntekt er kr.  " + totaltSalg +",-\n");
+        System.out.printf("Brutto inntekt er kr.  %.2f" + ",-\n", totaltSalg);
         System.out.println("----------------------------------------------");
         System.out.println(" ");
     }
@@ -31,7 +31,8 @@ public class Reports {
         for (int i = 0; i < size; i ++) {
             totaltSalg = totaltSalg + storedata.getItem(i).getTotalProfit();
         }
-        System.out.printf("Brutto inntekt er: %f54 \n", totaltSalg);
+        System.out.printf("Brutto inntekt er kr.  %.2f" + ",-\n", totaltSalg);
+        //System.out.printf("Brutto inntekt er: %f54 \n", totaltSalg);
         System.out.println("----------------------------------------------");
         System.out.println(" ");
     }

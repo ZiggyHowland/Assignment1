@@ -52,7 +52,7 @@ public class OpenFile {
         } catch (FileNotFoundException exception) { //FileNotFoundException extends IOException
             throw new FileNotFoundException();
         } catch (IOException e) {
-            throw new IOException();
+            throw new IOException(e);
         } catch (Exception e) {
             System.out.println(e);
         }

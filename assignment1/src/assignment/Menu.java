@@ -62,10 +62,10 @@ public class Menu {
                          break;
                     case 2:
                         System.out.println("Get reports overall");
-                        String filename = askForFileNameAndGiveFileStatusAndFileRows(openFile);
+                        /*String filename = askForFileNameAndGiveFileStatusAndFileRows(openFile);
                         //readClass.readEverything(filename);
                         int size = storedata.getObjectsSize();
-                        System.out.println("Size: " + size);
+                        System.out.println("Size: " + size); */
                         //add/put valgte data rapporter i Array / hashmap el. - kan eksporteres senere
                         break;
                     case 3:
@@ -163,7 +163,7 @@ public class Menu {
              } catch (NumberFormatException e) {
                  System.out.println("File cointains wrong format, is not possible to use\n"); //Feil i format
              } catch (FileNotFoundException exception) { System.out.println("File doesn't exist\n"); //FileNotFoundException extends IOException
-             } catch (IOException e) { System.out.println("Invalid permissions\n");
+             } catch (IOException e) { System.out.println("Didn't work\n");
              } catch (Exception e) { System.out.println("Didn't work\n");
              }
 
