@@ -64,23 +64,23 @@ public class Menu {
                         break;
                     case 3:
                         System.out.println("Get report for xxxx (total unit cost in Middle East?)");
+                        String report = "TEST - link / method to actual report here";
+                        addThisReportToExportFile(openCSV, report);
                         break;
-                    case 4:
+                     case 4:
                         System.out.println("Get report for xxxx (Average unit cost in Europe?)");
+                        String report2 = null;
+                        addThisReportToExportFile(openCSV, report2);
                         break;
                     case 5:
                         System.out.println("Edit data in file");
                         break;
                     case 6:
                         System.out.println("Export data to file");
-                        System.out.println(" TEST Enter string to add it to file: ");
-                        String testData = Ui.inputStringFromUser();
-                        openCSV.addStringToExport(testData);
-
-                        System.out.println(" TEST Enter filename ");
-                        String filename4 = Ui.inputStringFromUser();
-                        openCSV.exportChosenDataToFile(filename4);
-                         break;
+                        System.out.println("Enter filename (remember .csv)");
+                        String filenameForExport = Ui.inputStringFromUser();
+                        openCSV.exportChosenDataToFile(filenameForExport);
+                        break;
                     case 7:
                         System.out.println("Read everything in file");
                         OpenCSV_AvailableFiles.printAvailableFiles(f);
@@ -124,6 +124,29 @@ public class Menu {
 
         }while (!quit);
 
+    }
+
+    private void addThisReportToExportFile(OpenCSV openCSV, String report) {
+        if (report != null){
+            boolean addToExport;
+            while (addToExport = true){
+                System.out.println("Do you want to add this report to file for export?" +
+                        "\nYes/No: ");
+                String addToExport2 = Ui.inputStringFromUser().toLowerCase();
+                if (addToExport2.equals("yes")) {
+                    openCSV.addStringToExport(report);
+                    System.out.println("Printing report to export.");
+                    break;
+                }
+                if (addToExport2.equals("no")) {
+                    break;
+                } else
+                    System.out.println("Invalid input");
+            }
+            return;
+
+        }
+        return;
     }
 
     private String testOpenFile(OpenFile openFile) {
