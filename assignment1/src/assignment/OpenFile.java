@@ -1,5 +1,6 @@
 package assignment;
 
+import assignment.openCSV.OpenCSV;
 import fileConnection.FileConnection;
 
 import java.io.*;
@@ -14,6 +15,10 @@ public class OpenFile {
 
     public static String getFilepath() {
         return filepath;
+    }
+
+    public static String getFilepathExport() {
+        return filepathExport;
     }
 
     public long getLines() {
