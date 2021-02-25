@@ -2,6 +2,7 @@ package assignment.openCSV;
 
 import assignment.Object;
 import assignment.StoreData;
+import assignment.OpenFile;
 import com.opencsv.CSVParser;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
@@ -19,6 +20,7 @@ import static assignment.OpenFile.getFilepath;
 
 public class OpenCSV {
     Scanner scanner = new Scanner(System.in);
+    List<String[]> therows = new ArrayList<>();
     //private final String filepath = "production/assignment1/";
 
     public static void readEverythingWithOpenCSV(String filename) {
@@ -173,6 +175,26 @@ public class OpenCSV {
         } catch (Exception e) {
             System.out.println(e);
         }
+    }
+
+    public void addStringToExport(String stringToExportFile) {
+            String[] row1 = new String[]{stringToExportFile};
+            therows.add(row1);
+    }
+
+    public void exportChosenDataToFile(String filename){
+        try{
+            CSVWriter writer = new CSVWriter(new FileWriter(getFilepath() + filename, true));
+
+            writer.writeAll(therows);
+            writer.close();
+
+
+
+
+    } catch (Exception e) {
+        System.out.println(e);
+    }
     }
 
 
