@@ -9,14 +9,14 @@ public class OpenFile {
     Scanner scanner = new Scanner(System.in);
     //ReadClass readClass = new ReadClass();
     long lines = 0;
-    /* private static final String filepath = "production/assignment1/";
-   private static final String f = "production/assignment1";
-   private static final String filepathExport = "production/export/";
-   private static final String filepathDelete = "production/delete/"; */
-    private static final String filepath = "production/assignment1/";
+    /*private static final String filepath = "production/assignment1/";
     private static final String filepathExport = "production/export/";
     private static final String filepathDelete = "production/delete/";
-    private static final String filepathEdit = "production/edit/";
+    private static final String filepathEdit = "production/edit/"; */
+    private static final String filepath = "assignment1/production/assignment1/";
+    private static final String filepathExport = "assignment1/production/export/";
+    private static final String filepathDelete = "assignment1/production/delete/";
+    private static final String filepathEdit = "assignment1/production/edit/";
 
     public static String getFilepath() {
         return filepath;
