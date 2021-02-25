@@ -53,16 +53,17 @@ public class OpenFile {
 
     public void getFileInfo(String filename) throws IOException {
         //try {
-            //System.out.println("Please enter filename:");
-            //String filnavn = scanner.nextLine();
-            BufferedReader file = FileConnection.readConnection(filepath + filename);
-            int lines = 0;
+        //System.out.println("Please enter filename:");
+        //String filnavn = scanner.nextLine();
+        BufferedReader file = FileConnection.readConnection(filepath + filename);
 
-            try (BufferedReader reader = new BufferedReader(new FileReader(filepath + filename))) {
-                while (reader.readLine() != null) lines++;
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            System.out.println("Number of lines: " + lines + "\n");
+
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(filepath + filename))) {
+            while (reader.readLine() != null) lines++;
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+        System.out.println("Number of lines: " + lines + "\n");
     }
+}
