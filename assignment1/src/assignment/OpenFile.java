@@ -14,9 +14,9 @@ public class OpenFile {
    private static final String filepathExport = "production/export/";
    private static final String filepathDelete = "production/delete/"; */
     private static final String filepath = "production/assignment1/";
-    private static final String filepathExport = "assignment1/production/export/";
-    private static final String filepathDelete = "assignment1/production/delete/";
-    private static final String filepathEdit = "assignment1/production/edit/";
+    private static final String filepathExport = "production/export/";
+    private static final String filepathDelete = "production/delete/";
+    private static final String filepathEdit = "production/edit/";
 
     public static String getFilepath() {
         return filepath;

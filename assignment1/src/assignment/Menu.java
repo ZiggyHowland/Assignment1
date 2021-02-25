@@ -38,8 +38,8 @@ public class Menu {
             System.out.print("Select one of the options by typing the corresponding number: \n" +
                     "\n1. Test if file exists and number of lines" +
                     "\n2. Get reports overall." +
-                    "\n3. View reports overall. " +
-                    "\n4. View reports per region and country " +
+                    "\n3. View report. " +
+                    "\n4. View report with option to export to file" +
                     "\n5. Edit data in file" +
                     "\n6. Export data to file" +
                     "\n7. Read everything in file" +
@@ -69,7 +69,7 @@ public class Menu {
                         //add/put valgte data rapporter i Array / hashmap el. - kan eksporteres senere
                         break;
                     case 3:
-                        System.out.println("View reports overall");
+                        System.out.println("View report");
                         String report = "TEST - link / method to actual report here";
                         //addThisReportToExportFile(openCSV, report);
 //                        OpenCSV_AvailableFiles.printAvailableFiles(fFilePath);
@@ -77,12 +77,9 @@ public class Menu {
                         Reports.mainReport(storedata);
                         break;
                      case 4:
-                        System.out.println("View reports per region and country");
-                        String report2 = null;
-//                        OpenCSV_AvailableFiles.printAvailableFiles(fFilePath);
-//                        storedata = OpenCSV.readAndSaveEverythingWithOpenCSV(askForFileNameAndGiveFileStatusAndFileRows(openFile));
-                        Reports.salesPerRegion(storedata);
-                        //addThisReportToExportFile(openCSV, report2);
+                        System.out.println("View report with option to export to file");
+                        String report2 = Reports.salesPerRegion(storedata);
+                        addThisReportToExportFile(openCSV, report2);
                         break;
                     case 5:
                         System.out.println("Edit data in file");
@@ -99,7 +96,7 @@ public class Menu {
                         break;
                     case 6:
                         System.out.println(
-                                "\n1. View current data set to be exported" +
+                                        "\n1. View current data set to be exported" +
                                         "\n2. Export data to file" +
                                         "\n3. Exit menu");
                         int selectExportMenu = Ui.inputIntFromUser();
