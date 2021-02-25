@@ -4,17 +4,24 @@ import com.opencsv.CSVParser;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
+
+import static assignment.OpenFile.getFilepath;
 
 public class OpenCSV {
-    public void readEverythingWithOpenCSV(String filename) {
+    Scanner scanner = new Scanner(System.in);
+    //private final String filepath = "production/assignment1/";
+
+    public static void readEverythingWithOpenCSV(String filename) {
         try {
-            CSVReader reader = new CSVReader(new FileReader("assignment1/"+filename));
+            CSVReader reader = new CSVReader(new FileReader(getFilepath()+filename));
             String[] nextline;
             while ((nextline = reader.readNext()) != null) {
                 System.out.println();
@@ -22,9 +29,9 @@ public class OpenCSV {
                     System.out.println(Arrays.toString(nextline));
                 }
             }
-            System.out.println("CSV Read complete");
+            System.out.println("CSV Read complete\n");
         } catch (FileNotFoundException e) {
-            System.out.println(e);
+            System.out.println("File doesn't exist");
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -33,65 +40,69 @@ public class OpenCSV {
 
     public void writeToFileWithStringsOpenCSV(String filename) {
         try {
-            System.out.println("assignment1/"+filename.concat(".csv"));
-            CSVWriter writer = new CSVWriter(new FileWriter("assignment1/"+filename.concat(".csv"), true));
+            String oneMore = "Yes";
+            CSVWriter writer = new CSVWriter(new FileWriter(getFilepath() + filename, true));
             List<String[]> therows = new ArrayList<>();
-            String[] header = new String[]{"Region", "Name", "OrderId", "Cost"};
-            therows.add(header);
-            String[] row1 = new String[]{"Europe", "Hans","233333", "205.90"};
-            String[] row2 = new String[]{"Asia", "Fredrik","2333367", "255.11"};
-            String[] row3 = new String[]{"Another region", "Another name","Another orderId", "Another Cost"};
-            therows.add(row1);
-            therows.add(row2);
-            therows.add(row3);
+            while (oneMore.equals("Yes") || oneMore.equals("yes")) {
+                //System.out.println(getFilepath() + filename);
+                System.out.println("Region:");
+                String region = scanner.nextLine();
+                System.out.println("Country:");
+                String country = scanner.nextLine();
+                System.out.println("Item type:");
+                String itemType = scanner.nextLine();
+                System.out.println("Sales channel:");
+                String salesChannel = scanner.nextLine();
+                System.out.println("Order priority:");
+                String orderPriority = scanner.nextLine();
+                System.out.println("Order date:");
+                String orderDate = scanner.nextLine();
+                System.out.println("Order ID:");
+                String orderID = scanner.nextLine();
+                System.out.println("Ship Date:");
+                String shipDate = scanner.nextLine();
+                System.out.println("Units sold:");
+                String unitsSold = String.valueOf(scanner.nextLine());
+                System.out.println("Unit Price:");
+                String unitPrice = String.valueOf(scanner.nextLine());
+                System.out.println("Unit Cost:");
+                String unitCost = String.valueOf(scanner.nextLine());;
+                System.out.println("Total Revenue:");
+                String totalRevenue = String.valueOf(scanner.nextLine());;
+                System.out.println("Total Cost:");
+                String totalCost = String.valueOf(scanner.nextLine());;
+                System.out.println("Total Profit:");
+                String totalProfit = String.valueOf(scanner.nextLine());;
 
-            writer.writeAll(therows); //OBS! WriteAll appender ikke, men sletter nåværende innhold og legger inn linjene over
-            //writer.writeNext(row1);
+                //String[] header = new String[]{"Region", "Name", "OrderId", "Cost"};
+                //therows.add(header);
+                String[] row1 = new String[]{region+","+country+","+itemType+","+salesChannel+","+orderPriority+","+orderDate+"," +
+                                            orderID+","+shipDate+","+unitsSold+","+unitPrice+","+unitPrice+","+unitCost+","+
+                                            totalRevenue+","+totalCost+","+totalProfit};
+                therows.add(row1);
+
+                writer.writeAll(therows);
+
+                System.out.println("Do you want to add one more row? 'Yes/No'");
+                oneMore = scanner.nextLine();
+            }
             writer.close();
 
+
+        } catch (FileNotFoundException e) {
+            System.out.println("File doesn't exist");
         } catch (Exception e) {
             System.out.println(e);
         }
     }
 
-    /* public void writeToFileWithObjectsOpenCSV(String filename) {
-        try {
-            CSVWriter writer = new CSVWriter(new FileWriter("assignment1/"+filename));
-            List<Object> objects = new ArrayList<>();
 
-            String region = contents.nextToken();
-            String country = contents.nextToken();
-            String itemType = contents.nextToken();
-            String salesChannel = contents.nextToken();
-            String orderPriority = contents.nextToken();
-            String orderDate = contents.nextToken();
-            int orderID = Integer.parseInt(contents.nextToken());
-            String shipDate = contents.nextToken();
-            int unitsSold = Integer.parseInt(contents.nextToken());
-            double unitPrice = Double.parseDouble(contents.nextToken());
-            double unitCost = Double.parseDouble(contents.nextToken());
-            double totalRevenue = Double.parseDouble(contents.nextToken());
-            double totalCost = Double.parseDouble(contents.nextToken());
-            double totalProfit = Double.parseDouble(contents.nextToken());
-
-            objects.add(new Object(region, country, itemType, salesChannel, orderPriority,
-                    orderDate, orderID, shipDate, unitsSold, unitPrice, unitCost,
-                    totalRevenue, totalCost, totalProfit));
-
-            writer.writeAll(objects);
-            writer.close();
-
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-    } */
-
-
-        public void parserWithOpenCSV() {
+         /* public void parserWithOpenCSV() {
             try {
                 CSVParser csvParser = new CSVParser();
             } catch (Exception e) {
                 System.out.println(e);
             }
-        }
+         } */
+
 }

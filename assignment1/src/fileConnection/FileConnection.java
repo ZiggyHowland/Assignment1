@@ -1,6 +1,7 @@
 package fileConnection;
 
 import java.io.*; //BufferedReader, BufferedWriter, FileReader, FileWriter, IOException, PrintWriter ...
+import java.util.NoSuchElementException;
 
 public class FileConnection {
     public static PrintWriter writeConnection(String filename) throws IOException {
@@ -11,6 +12,7 @@ public class FileConnection {
             return writer;
         } catch (FileNotFoundException e) {throw new FileNotFoundException();
         } catch(IOException e) {throw new IOException();
+        } catch(NoSuchElementException e) { throw new NoSuchElementException();
         } catch(NullPointerException e) { throw new NullPointerException();
         } catch (Exception e) {return null;}
 
@@ -23,6 +25,7 @@ public class FileConnection {
             return reader;
         } catch (FileNotFoundException e) {throw new FileNotFoundException();
         } catch(IOException e) { throw new IOException();
+        } catch(NoSuchElementException e) { throw new NoSuchElementException();
         } catch(NullPointerException e) { throw new NullPointerException();
         } catch(Exception e){return null;}
     }
