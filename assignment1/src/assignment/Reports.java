@@ -2,16 +2,20 @@ package assignment;
 
 public class Reports {
 
-    public static void RunReports(StoreData storedata){
+    public static void mainReport(StoreData storedata){
 
         int size = StoreData.sizeOfReport(storedata.objects);
         double totaltSalg = 0;
+        System.out.println("----------------------------------------------");
         System.out.println("Salgsrapport");
+        System.out.println("----------------------------------------------");
         System.out.println("Totalt antall salg er " + size);
         for (int i = 0; i < size; i ++) {
             totaltSalg = totaltSalg + storedata.getItem(i).getTotalProfit();
         }
         System.out.println("Brutto inntekt er: " + totaltSalg);
+        System.out.println("----------------------------------------------");
+        System.out.println(" ");
     }
 
     public static double sumTotalRevenue (StoreData sd){
@@ -27,14 +31,15 @@ public class Reports {
 
         String country = "";
         double sort = 0;
+        int cc = 0;
         int size = sd.getObjectsSize();
         for (int i = 0; i < size; i++) {
             if (sd.getItem(i).getTotalProfit() > sort) {
                 country = sd.getItem(i).getRegion();
                 sort = sd.getItem(i).getTotalProfit();
+                cc = i;
             }
         }
-        return country;
-
+        return sd.getItem(cc).getRegion();
     }
 }
