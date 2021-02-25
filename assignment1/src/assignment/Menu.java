@@ -88,6 +88,8 @@ public class Menu {
                          break;
                     case 8:
                         System.out.println("Read only specific line in file");
+                        OpenCSV_AvailableFiles.printAvailableFiles(f);
+                        OpenCSV.readOnlySpecificLines(testOpenFile(openFile), getRow());
                         break;
                     case 9:
                         System.out.println("Write to file");
@@ -97,11 +99,8 @@ public class Menu {
                     case 10:
                         System.out.println("Save everything from file");
                         OpenCSV_AvailableFiles.printAvailableFiles(f);
-                        OpenCSV.readAndSaveEverythingWithOpenCSV(testOpenFile(openFile));
-                        ArrayList<Object> objects = storedata.getObjects();
-                        for (Object o : objects) {
-                            System.out.println(o.toString());
-                        }
+                        storedata = OpenCSV.readAndSaveEverythingWithOpenCSV(testOpenFile(openFile));
+                        //System.out.println(storedata.getObjectsSize());
                         break;
                     case 11:
                         System.out.println("Exiting menu...");
@@ -111,18 +110,23 @@ public class Menu {
                         System.out.println("Invalid choice");
             }
 
-             }catch (InputMismatchException e){ System.out.println("Invalid choice");
+             }catch (InputMismatchException e){ System.out.println("Invalid choice\n");
                  Ui.inputStringFromUser();
-             } catch(NoSuchElementException e) { System.out.println("NoSuchElementException()");
+             } catch(NoSuchElementException e) { System.out.println("NoSuchElementException()\n");
                  Ui.inputStringFromUser();
-             } catch(NullPointerException e) { System.out.println("NullPointerException()");
+             } catch(NullPointerException e) { System.out.println("NullPointerException()\n");
                  Ui.inputStringFromUser();
-             } catch (Exception e) { System.out.println("Didn't work");
-                 Ui.inputStringFromUser();
+             } catch (ArrayIndexOutOfBoundsException e) {
+                 System.out.println("File cointains different length per row, and is not possible to use\n"); //Ulik antall kolonner i radene, og kan derfor ikke opprette Object objekt
+             } catch (NumberFormatException e) {
+                 System.out.println("File cointains wrong format, is not possible to use\n"); //Feil i format
+             } catch (FileNotFoundException exception) { System.out.println("File doesn't exist\n"); //FileNotFoundException extends IOException
+             } catch (IOException e) { System.out.println("Didn't work\n");
+             } catch (Exception e) { System.out.println("Didn't work\n");
              }
 
 
-        }while (!quit);
+         }while (!quit);
 
     }
 
@@ -150,6 +154,7 @@ public class Menu {
     }
 
     private String testOpenFile(OpenFile openFile) {
+    private String testOpenFile(OpenFile openFile) throws IOException {
         System.out.println("Open file selected");
         //"filnavn: " --> til metode i annen klasse. Prøve å åpne fil. Sette opp exceptions  +lese data
         System.out.println("Please enter filename:");
@@ -160,10 +165,10 @@ public class Menu {
     }
 
     public int getRow() {
-        System.out.println("Please enter row you want to read:");
+        System.out.println("\nPlease enter row you want to read:");
         int row = scanner.nextInt();
         scanner.nextLine();
-        return row;
+        return row-1;
     }
 
 }

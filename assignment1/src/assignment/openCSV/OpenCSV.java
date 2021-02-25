@@ -41,28 +41,42 @@ public class OpenCSV {
         }
     }
 
-    public static void readAndSaveEverythingWithOpenCSV(String filename) {
+    public static StoreData readAndSaveEverythingWithOpenCSV(String filename) throws Exception {
         try {
             CSVReader reader = new CSVReader(new FileReader(getFilepath()+filename));
             String[] nextline;
             StoreData storedata = new StoreData();
             while ((nextline = reader.readNext()) != null) {
-                System.out.println();
+                //System.out.println();
                 if (nextline != null) {
                     String region = nextline[0];
+                    //System.out.println("Region: " + region);
                     String country = nextline[1];
+                    //System.out.println("Country: " + country);
                     String itemType = nextline[2];
+                    //System.out.println("Item type: " + itemType);
                     String salesChannel = nextline[3];
+                    //System.out.println("Sales channel " + salesChannel);
                     String orderPriority = nextline[4];
+                    //System.out.println("Order priority: " + orderPriority);
                     String orderDate = nextline[5];
-                    String orderId = nextline[7];
-                    String shipDate = nextline[8];
-                    int unitsSold = Integer.parseInt(nextline[9]);
-                    double unitPrice = Double.parseDouble(nextline[10]);
-                    double unitCost = Double.parseDouble(nextline[11]);
-                    double totalRevenue = Double.parseDouble(nextline[12]);
-                    double totalCost = Double.parseDouble(nextline[13]);
-                    double totalProfit = Double.parseDouble(nextline[14]);
+                    //System.out.println("Orderdate: " + orderDate);
+                    String orderId = nextline[6];
+                    //System.out.println("Order ID: " + orderId);
+                    String shipDate = nextline[7];
+                    //System.out.println("Ship date: " + shipDate);
+                    int unitsSold = Integer.parseInt(nextline[8]);
+                    //System.out.println("Units sold: " + unitsSold);
+                    double unitPrice = Double.parseDouble(nextline[9]);
+                    //System.out.println("Unit Price: " + unitPrice);
+                    double unitCost = Double.parseDouble(nextline[10]);
+                    //System.out.println("Unit cost: " + unitCost);
+                    double totalRevenue = Double.parseDouble(nextline[11]);
+                    //System.out.println("Total revenue: " + totalRevenue);
+                    double totalCost = Double.parseDouble(nextline[12]);
+                    //System.out.println("Total cost: " + totalCost);
+                    double totalProfit = Double.parseDouble(nextline[13]);
+                    //System.out.println("Total profit: " + totalProfit);
 
 
                     storedata.addObject(new Object(region, country, itemType, salesChannel, orderPriority,
@@ -72,14 +86,14 @@ public class OpenCSV {
                 }
             }
             System.out.println("CSV Read complete\n");
-        } catch (FileNotFoundException e) {
-            System.out.println("File doesn't exist\n");
+            reader.close();
+            return storedata;
         } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("File cointains different length per row, and is not possible to use\n"); //Ulik antall kolonner i radene, og kan derfor ikke opprette Object objekt
+            throw new ArrayIndexOutOfBoundsException(); //Ulik antall kolonner i radene, og kan derfor ikke opprette Object objekt
         } catch (NumberFormatException e) {
-            System.out.println("File cointains wrong format, is not possible to use\n"); //Ulik antall kolonner i radene, og kan derfor ikke opprette Object objekt
+            throw new NumberFormatException(); //Feil i format
         } catch (Exception e) {
-            System.out.println(e);
+            throw new Exception();
         }
     }
 
