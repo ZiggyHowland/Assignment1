@@ -1,5 +1,6 @@
 package assignment.openCSV;
 
+import assignment.OpenFile;
 import assignment.openCSV.OpenCSV;
 
 import java.io.File;
@@ -9,7 +10,7 @@ public class OpenCSV_test {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         OpenCSV openCSV = new OpenCSV();
-        final File f = new File("assignment1/production/assignment1/");
+        final File f = new File(OpenFile.getFilepath());
         String[] files = f.list();
         System.out.println("Available files:");
         for (int i = 0; i < files.length; i++) {

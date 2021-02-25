@@ -130,7 +130,9 @@ public class Menu {
                     case 11:
                         System.out.println("Delete file\n");
                         OpenCSV_AvailableFiles.printAvailableFiles(fDelete);
-                        DeleteFile.deleteFileMethod(testOpenFile(openFile));
+                        System.out.println("Filename to delete:");
+                        String filenameToDelete = scanner.nextLine();
+                        DeleteFile.deleteFileMethod(filenameToDelete);
                         break;
                     case 12:
                         System.out.println("Exiting menu...");
