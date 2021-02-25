@@ -10,6 +10,10 @@ public class StoreData {
         return objects;
     }
 
+    public int getObjectsSize() {
+        return objects.size();
+    }
+
     public void addObject(Object object) {
         objects.add(object);
     }

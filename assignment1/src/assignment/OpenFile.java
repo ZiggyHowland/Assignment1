@@ -23,7 +23,7 @@ public class OpenFile {
         try {
             ReadClass readClass = new ReadClass();
             //readClass.setFilnavn(filepath+"SalesRecords3.csv");
-            //readClass.readEverything(filename);
+            readClass.readEverything(filename);
             //readClass.printEverythingInObjects();
             readClass.readOnlySpecificColumns();
         } catch (NullPointerException exception) {
@@ -53,17 +53,16 @@ public class OpenFile {
 
     public void getFileInfo(String filename) throws IOException {
         //try {
-        //System.out.println("Please enter filename:");
-        //String filnavn = scanner.nextLine();
-        BufferedReader file = FileConnection.readConnection(filepath + filename);
+            //System.out.println("Please enter filename:");
+            //String filnavn = scanner.nextLine();
+            BufferedReader file = FileConnection.readConnection(filepath + filename);
+            int lines = 0;
 
-
-
-        try (BufferedReader reader = new BufferedReader(new FileReader(filepath + filename))) {
-            while (reader.readLine() != null) lines++;
-        } catch (IOException e) {
-            e.printStackTrace();
+            try (BufferedReader reader = new BufferedReader(new FileReader(filepath + filename))) {
+                while (reader.readLine() != null) lines++;
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            System.out.println("Number of lines: " + lines + "\n");
         }
-        System.out.println("Number of lines: " + lines + "\n");
     }
-}
