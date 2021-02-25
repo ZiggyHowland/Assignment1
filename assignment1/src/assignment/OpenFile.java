@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class OpenFile {
     Scanner scanner = new Scanner(System.in);
-    ReadClass readClass = new ReadClass();
+    //ReadClass readClass = new ReadClass();
     long lines = 0;
     private static final String filepath = "production/assignment1/";
     private static final String f = "production/assignment1";
