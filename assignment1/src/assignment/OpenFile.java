@@ -31,24 +31,21 @@ public class OpenFile {
         }
     }
 
-    public String openFile(String filename){
+    public void openFile(String filename) throws IOException {
 
         try {
             BufferedReader file = FileConnection.readConnection(filepath + filename);
             System.out.println(filename + " file exists and is opened");
             getFileInfo(filename);
         } catch (NullPointerException exception) {
-            System.out.println("NullPointerException");
+            throw new NullPointerException();
         } catch (FileNotFoundException exception) { //FileNotFoundException extends IOException
-            System.out.println("File doesn't exist");
-            scanner.next();
-            return ("File doesn't exist");
+            throw new FileNotFoundException();
         } catch (IOException e) {
-            System.out.println("IOException");
+            throw new IOException();
         } catch (Exception e) {
             System.out.println(e);
         }
-        return null;
     }
 
     public void getFileInfo(String filename) throws IOException {
