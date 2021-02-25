@@ -25,6 +25,7 @@ public class Menu {
         //ReadClass readClass = new ReadClass();
         OpenCSV openCSV = new OpenCSV();
         final File fFilePath = new File(OpenFile.getFilepath());
+        final File fExport = new File(OpenFile.getFilepathExport());
         final File fDelete = new File(OpenFile.getFilePathDelete());
 
         boolean quit = false;
