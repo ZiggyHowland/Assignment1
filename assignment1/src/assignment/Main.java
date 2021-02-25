@@ -1,6 +1,6 @@
 package assignment;
 
-//import assignment.dependencies.Ui_fromScanner;
+import assignment.dependencies.Ui_fromScanner;
 
 public class Main {
 

@@ -56,6 +56,7 @@ public class Menu {
                  switch (menuSelect){
                      case 1:
                          System.out.println("Test if file exists and number of lines");
+                         OpenCSV_AvailableFiles.printAvailableFiles(fFilePath);
                          testOpenFile(openFile);
                          break;
                     case 2:
