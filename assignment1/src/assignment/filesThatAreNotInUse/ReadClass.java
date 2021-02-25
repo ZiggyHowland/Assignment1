@@ -1,10 +1,13 @@
-package assignment;
+package assignment.filesThatAreNotInUse;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
+import assignment.Object;
+import assignment.OpenFile;
+import assignment.StoreData;
 import fileConnection.FileConnection;
 
 public class ReadClass {

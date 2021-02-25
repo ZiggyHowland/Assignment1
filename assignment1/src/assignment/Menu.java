@@ -25,7 +25,8 @@ public class Menu {
         StoreData storedata = new StoreData();
         //ReadClass readClass = new ReadClass();
         OpenCSV openCSV = new OpenCSV();
-        final File f = new File("production/assignment1");
+        final File fFilePath = new File(OpenFile.getFilepath());
+        final File fDelete = new File(OpenFile.getFilePathDelete());
 
         boolean quit = false;
 
@@ -43,7 +44,8 @@ public class Menu {
                     "\n8. Read only specific line in file" +
                     "\n9. Write to file" +
                     "\n10. Save everything from file" +
-                    "\n11. Exit menu" +
+                    "\n11. Delete file" +
+                    "\n12. Exit menu" +
                     "\n\nEnter number: ");
 
              try{
@@ -74,6 +76,7 @@ public class Menu {
                         break;
                     case 5:
                         System.out.println("Edit data in file");
+                        OpenCSV_AvailableFiles.printAvailableFiles(fFilePath);
                         break;
                     case 6:
                         System.out.println("Export data to file");
@@ -83,26 +86,31 @@ public class Menu {
                         break;
                     case 7:
                         System.out.println("Read everything in file");
-                        OpenCSV_AvailableFiles.printAvailableFiles(f);
+                        OpenCSV_AvailableFiles.printAvailableFiles(fFilePath);
                         OpenCSV.readEverythingWithOpenCSV(testOpenFile(openFile));
                          break;
                     case 8:
                         System.out.println("Read only specific line in file");
-                        OpenCSV_AvailableFiles.printAvailableFiles(f);
+                        OpenCSV_AvailableFiles.printAvailableFiles(fFilePath);
                         OpenCSV.readOnlySpecificLines(testOpenFile(openFile), getRow());
                         break;
                     case 9:
                         System.out.println("Write to file");
-                        OpenCSV_AvailableFiles.printAvailableFiles(f);
+                        OpenCSV_AvailableFiles.printAvailableFiles(fFilePath);
                         openCSV.writeToFileWithStringsOpenCSV(testOpenFile(openFile));
                         break;
                     case 10:
                         System.out.println("Save everything from file");
-                        OpenCSV_AvailableFiles.printAvailableFiles(f);
+                        OpenCSV_AvailableFiles.printAvailableFiles(fFilePath);
                         storedata = OpenCSV.readAndSaveEverythingWithOpenCSV(testOpenFile(openFile));
                         //System.out.println(storedata.getObjectsSize());
                         break;
                     case 11:
+                        System.out.println("Delete file\n");
+                        OpenCSV_AvailableFiles.printAvailableFiles(fDelete);
+                        DeleteFile.deleteFileMethod(testOpenFile(openFile));
+                        break;
+                    case 12:
                         System.out.println("Exiting menu...");
                         quit = true;
                         break;
@@ -121,7 +129,7 @@ public class Menu {
              } catch (NumberFormatException e) {
                  System.out.println("File cointains wrong format, is not possible to use\n"); //Feil i format
              } catch (FileNotFoundException exception) { System.out.println("File doesn't exist\n"); //FileNotFoundException extends IOException
-             } catch (IOException e) { System.out.println("Didn't work\n");
+             } catch (IOException e) { System.out.println("Invalid permissions\n");
              } catch (Exception e) { System.out.println("Didn't work\n");
              }
 
