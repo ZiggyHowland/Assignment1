@@ -1,4 +1,4 @@
-package InternalTesting;
+package assignment.filesThatAreNotInUse.InternalTesting;
 
 public class LineItem {
 

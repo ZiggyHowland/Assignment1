@@ -14,6 +14,7 @@ import java.util.Scanner;
 
 public class Menu {
     private Ui Ui;
+    //private StoreData storedata;
     Scanner scanner = new Scanner(System.in);
 
     public Menu(Ui_fromScanner uiFromScanner) {

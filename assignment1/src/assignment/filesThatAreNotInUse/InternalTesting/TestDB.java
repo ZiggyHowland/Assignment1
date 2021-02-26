@@ -1,6 +1,4 @@
-package InternalTesting;
-
-import assignment.*;
+package assignment.filesThatAreNotInUse.InternalTesting;
 
 public class TestDB {
 
