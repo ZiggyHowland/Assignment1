@@ -7,7 +7,9 @@ public class OpenCSV_AvailableFiles {
         String[] files = f.list();
         System.out.println("Available files:");
         for (int i = 0; i < files.length; i++) {
-            System.out.println(files[i]);
+            String word = files[i];
+            if(word.substring(word.length()-3).equals("csv")) System.out.println(files[i]);
+            //System.out.println(files[i]);
         }
     }
 }
