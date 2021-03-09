@@ -1,0 +1,1 @@
+Endring i den tomme tekstfilen kan skape trøbbel. Heldigvis har jeg (Sigbjørn) bare gjort det i den forkede versjonen av prosjektet.
